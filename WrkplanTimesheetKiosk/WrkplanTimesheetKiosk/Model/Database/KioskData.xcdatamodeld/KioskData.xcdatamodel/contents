@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17511" systemVersion="20B29" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Admin" representedClassName="Admin" syncable="YES" codeGenerationType="class">
+        <attribute name="face_attendance_yn" optional="YES" attributeType="String"/>
+        <attribute name="kiosk_device_id" optional="YES" attributeType="String"/>
+        <attribute name="task_selection_yn" optional="YES" attributeType="String"/>
+        <attribute name="unit_name" optional="YES" attributeType="String"/>
+        <attribute name="view_leave_balance_yn" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="Admin" positionX="-63" positionY="-18" width="128" height="104"/>
+    </elements>
+</model>
