@@ -46,6 +46,7 @@
 		1798FCF12576645300A7EFCA /* TaskSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1798FCF02576645300A7EFCA /* TaskSelectionViewController.swift */; };
 		17D09E93258211BA004980FA /* KGRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17D09E92258211BA004980FA /* KGRadioButton.swift */; };
 		17E5779C257A71C700F10376 /* SWXMLHash in Frameworks */ = {isa = PBXBuildFile; productRef = 17E5779B257A71C700F10376 /* SWXMLHash */; };
+		17F3D7EB259B51A6009384E0 /* EdgeInsetLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 17F3D7EA259B51A6009384E0 /* EdgeInsetLabel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +108,7 @@
 		1798FCEB2576643B00A7EFCA /* TaskSelection.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TaskSelection.storyboard; sourceTree = "<group>"; };
 		1798FCF02576645300A7EFCA /* TaskSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSelectionViewController.swift; sourceTree = "<group>"; };
 		17D09E92258211BA004980FA /* KGRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KGRadioButton.swift; sourceTree = "<group>"; };
+		17F3D7EA259B51A6009384E0 /* EdgeInsetLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdgeInsetLabel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +255,7 @@
 				172D29F12575231500C6E2A6 /* CustomBorder.swift */,
 				1764571E257F852500274773 /* AppConfig.swift */,
 				17645729257F8E7D00274773 /* Connectivity.swift */,
+				17F3D7EA259B51A6009384E0 /* EdgeInsetLabel.swift */,
 			);
 			path = Config;
 			sourceTree = "<group>";
@@ -551,6 +554,7 @@
 				172D29BB25751FD000C6E2A6 /* ViewController.swift in Sources */,
 				17D09E93258211BA004980FA /* KGRadioButton.swift in Sources */,
 				172EC44D2583E1B500F96D6E /* TaskSelectionTableViewCell.swift in Sources */,
+				17F3D7EB259B51A6009384E0 /* EdgeInsetLabel.swift in Sources */,
 				17645725257F8C4F00274773 /* UserSingletonModel.swift in Sources */,
 				1798F5F8257FA49800EEE62C /* EmployeeImageSettingsTableViewCell.swift in Sources */,
 				17197D3A258A3C2000F4F8C5 /* PunchOutBreakViewController.swift in Sources */,

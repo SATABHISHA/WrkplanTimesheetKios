@@ -31,50 +31,187 @@
                                     <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee ID: EMP0008" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zni-OB-Zh1">
-                                <rect key="frame" x="30" y="162" width="774" height="43"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="43" id="xMW-50-CAL">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="26"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 1: xxxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="MHJ-eF-eHb">
-                                <rect key="frame" x="30" y="213" width="774" height="45"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="45" id="6nC-L1-UX4">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="26"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                </variation>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 2: xxxx" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="rCr-dU-0ww">
-                                <rect key="frame" x="30" y="266" width="774" height="44"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="44" id="POr-SI-Uoy">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="26"/>
-                                    </constraint>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=regular-widthClass=compact">
-                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                </variation>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
-                                <rect key="frame" x="100" y="348" width="634" height="592"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-IM-HEL">
+                                <rect key="frame" x="100" y="162" width="634" height="90"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-Aq-sv0">
+                                        <rect key="frame" x="0.0" y="0.0" width="634" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="gUC-mV-4UF" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="335" id="9RM-Pm-YUf">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="height" constant="30" id="J7A-XX-j45">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="18"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-l7-fe5">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="k7x-ZG-S45">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMP0008" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zni-OB-Zh1">
+                                                <rect key="frame" x="231" y="0.0" width="403" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="403" id="A5P-CW-KRc">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="Hpn-gZ-ce3">
+                                        <rect key="frame" x="0.0" y="30" width="634" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="xUJ-Pa-ifQ" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="be5-bz-YGq">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="18"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="335" id="le8-UE-ryd">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-IW-63D">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="vjZ-9z-J0D">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="L2Q-Y9-IcF">
+                                                <rect key="frame" x="231" y="0.0" width="403" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="403" id="gWU-g2-duU">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="ME5-jT-QPo">
+                                        <rect key="frame" x="0.0" y="60" width="634" height="30"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-vV-GrW" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="0.0" width="199" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Z4V-Zb-LM9">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="18"/>
+                                                    </constraint>
+                                                    <constraint firstAttribute="width" constant="335" id="b4R-8z-lL8">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="leftTextInset">
+                                                        <real key="value" value="15"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="agE-gx-OPR">
+                                                <rect key="frame" x="200" y="0.0" width="30" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="30" id="m0x-t7-mq7">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                </variation>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-zn-NcM">
+                                                <rect key="frame" x="231" y="0.0" width="403" height="30"/>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="403" id="nTZ-wx-tZf">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="220"/>
+                                                    </constraint>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                <color key="textColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                                <variation key="heightClass=regular-widthClass=compact">
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                </variation>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="37" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
+                                <rect key="frame" x="100" y="314" width="634" height="411"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-dp-SIY">
                                         <rect key="frame" x="0.0" y="0.0" width="634" height="150"/>
@@ -201,10 +338,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-1i-eyH" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="180" width="634" height="124"/>
+                                        <rect key="frame" x="0.0" y="187" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View / Select / Switch Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-sy-rQV">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -237,10 +374,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnX-pp-LVh" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="334" width="634" height="124"/>
+                                        <rect key="frame" x="0.0" y="274" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Leave Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-kl-Plx">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -273,10 +410,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Cs-OSS" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="488" width="634" height="104"/>
+                                        <rect key="frame" x="0.0" y="361" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-T5-tse">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="104"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -315,56 +452,34 @@
                         <viewLayoutGuide key="safeArea" id="utI-9C-RHD"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="MHJ-eF-eHb" secondAttribute="trailing" constant="30" id="0Dw-ro-yfU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
                             <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="q5M-lG-DrM" secondAttribute="trailing" constant="32" id="0dL-UJ-o7f">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstItem="MHJ-eF-eHb" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="30" id="56W-hW-ccc">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
-                            <constraint firstItem="rCr-dU-0ww" firstAttribute="top" secondItem="MHJ-eF-eHb" secondAttribute="bottom" constant="8" id="7DZ-KQ-EIZ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
-                            </constraint>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="Zni-OB-Zh1" secondAttribute="trailing" constant="30" id="9vg-fi-7AS">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
+                            <constraint firstItem="fxH-Qh-lfu" firstAttribute="top" secondItem="kqd-IM-HEL" secondAttribute="bottom" constant="62" id="5EX-Q2-qSU">
+                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
                             </constraint>
                             <constraint firstItem="utI-9C-RHD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="958" id="APy-TK-XoJ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="500"/>
                             </constraint>
+                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="fxH-Qh-lfu" secondAttribute="trailing" constant="100" id="BFA-3p-Pgu">
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
+                            </constraint>
                             <constraint firstItem="q5M-lG-DrM" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="31" id="BeW-My-0KZ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstItem="Zni-OB-Zh1" firstAttribute="top" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="8" id="EPF-36-KOw">
-                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
-                            </constraint>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fxH-Qh-lfu" secondAttribute="bottom" constant="172" id="EhY-Dp-EQU">
-                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                            </constraint>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="fxH-Qh-lfu" secondAttribute="trailing" constant="100" id="GHq-mk-cTt">
+                            <constraint firstItem="kqd-IM-HEL" firstAttribute="top" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="8" id="Bix-LO-XXC"/>
+                            <constraint firstItem="fxH-Qh-lfu" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="100" id="ItO-qz-wFR">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="rCr-dU-0ww" secondAttribute="trailing" constant="30" id="Lpb-nY-it4">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
-                            <constraint firstItem="Zni-OB-Zh1" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="30" id="MYH-Ab-FsM">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
-                            <constraint firstItem="rCr-dU-0ww" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="30" id="RVh-5n-afX">
-                                <variation key="heightClass=regular-widthClass=compact" constant="10"/>
-                            </constraint>
-                            <constraint firstItem="MHJ-eF-eHb" firstAttribute="top" secondItem="Zni-OB-Zh1" secondAttribute="bottom" constant="8" id="eV0-BJ-8fH">
-                                <variation key="heightClass=regular-widthClass=compact" constant="5"/>
-                            </constraint>
-                            <constraint firstItem="fxH-Qh-lfu" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="100" id="n3p-tX-WKK">
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fxH-Qh-lfu" secondAttribute="bottom" constant="20" id="chq-Hh-Oqo"/>
+                            <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="kqd-IM-HEL" secondAttribute="trailing" constant="100" id="fIq-0c-8fh">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
                             <constraint firstItem="q5M-lG-DrM" firstAttribute="top" secondItem="utI-9C-RHD" secondAttribute="top" constant="34" id="peV-vf-x8O">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="fxH-Qh-lfu" firstAttribute="top" secondItem="rCr-dU-0ww" secondAttribute="bottom" constant="38" id="r8N-Fe-vY4">
-                                <variation key="heightClass=regular-widthClass=compact" constant="22"/>
+                            <constraint firstItem="kqd-IM-HEL" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="100" id="rHy-c0-quR">
+                                <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
                         </constraints>
                     </view>
@@ -386,10 +501,13 @@
                         <outlet property="label_custom_button_punchout" destination="b18-wp-WhL" id="uzu-0Q-1Og"/>
                         <outlet property="label_emp_id" destination="Zni-OB-Zh1" id="5vi-my-oK4"/>
                         <outlet property="label_emp_name" destination="q5M-lG-DrM" id="PQM-nC-Dmf"/>
+                        <outlet property="label_emp_name_title" destination="gUC-mV-4UF" id="Mhr-1H-Ycp"/>
                         <outlet property="label_punch_in_break_caption" destination="J0e-qG-Gfd" id="Zs4-hj-UdW"/>
                         <outlet property="label_punch_in_break_title" destination="0CB-2b-mJG" id="uGc-yO-Ydd"/>
-                        <outlet property="label_supervisor1" destination="MHJ-eF-eHb" id="fuj-Ic-dqz"/>
-                        <outlet property="label_supervisor2" destination="rCr-dU-0ww" id="G85-W3-yZy"/>
+                        <outlet property="label_supervisor1" destination="L2Q-Y9-IcF" id="pI5-v1-jT3"/>
+                        <outlet property="label_supervisor1_title" destination="xUJ-Pa-ifQ" id="OcZ-IW-2NS"/>
+                        <outlet property="label_supervisor2" destination="Qrm-zn-NcM" id="g0q-09-62e"/>
+                        <outlet property="label_supervisor2_title" destination="PnS-vV-GrW" id="192-Pa-drG"/>
                         <outlet property="stackViewButtonborder" destination="Rnk-ho-NIb" id="Xu7-cN-MKT"/>
                         <outlet property="stackview_height" destination="asw-Hs-iDS" id="12a-ak-SUV"/>
                         <outlet property="tableViewLeaveBalance" destination="tBx-co-Vsg" id="FOn-aC-nFo"/>
@@ -726,20 +844,14 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="4zE-jW-gMk">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+        <designable name="PnS-vV-GrW">
+            <size key="intrinsicContentSize" width="135.5" height="30"/>
         </designable>
-        <designable name="DgO-1i-eyH">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+        <designable name="gUC-mV-4UF">
+            <size key="intrinsicContentSize" width="134.5" height="30"/>
         </designable>
-        <designable name="aZL-Cs-OSS">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="e1w-bm-EXw">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="jnX-pp-LVh">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+        <designable name="xUJ-Pa-ifQ">
+            <size key="intrinsicContentSize" width="132.5" height="30"/>
         </designable>
     </designables>
     <resources>

@@ -39,6 +39,10 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var label_emp_id: UILabel!
     @IBOutlet weak var label_supervisor1: UILabel!
     @IBOutlet weak var label_supervisor2: UILabel!
+    @IBOutlet weak var label_emp_name_title: UILabel!
+    @IBOutlet weak var label_supervisor1_title: UILabel!
+    @IBOutlet weak var label_supervisor2_title: UILabel!
+    
     @IBOutlet weak var stackview_height: NSLayoutConstraint!
     
     @IBOutlet weak var constraint_view_select_top: NSLayoutConstraint!
@@ -84,9 +88,13 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
         
         
         label_emp_name.text = "Hello \n \(RealtimeDetectionViewController.EmployeeName!)"
-        label_supervisor1.text = "Supervisor 1: \(RealtimeDetectionViewController.Supervisor1!)"
-        label_supervisor2.text = "Supervisor 2: \(RealtimeDetectionViewController.Supervisor2!)"
-        label_emp_id.text = "Employee ID: \(RealtimeDetectionViewController.PersonId!)"
+        label_supervisor1.text = "\(RealtimeDetectionViewController.Supervisor1!)"
+        label_supervisor2.text = "\(RealtimeDetectionViewController.Supervisor2!)"
+        label_emp_id.text = "\(RealtimeDetectionViewController.PersonId!)"
+        
+       /* label_emp_name_title.setLeftPaddingPoints(10)
+        label_supervisor1_title.setLeftPaddingPoints(10)
+        label_supervisor2_title.setLeftPaddingPoints(10)*/
         
         CheckButtonInOut(stringCheck: "Check")
         
@@ -970,3 +978,4 @@ extension UIView {
         layer.addSublayer(border)
     }
 }
+
