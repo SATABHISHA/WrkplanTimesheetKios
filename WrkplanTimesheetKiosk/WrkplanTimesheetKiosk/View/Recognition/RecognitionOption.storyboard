@@ -32,18 +32,15 @@
                                 </variation>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="kqd-IM-HEL">
-                                <rect key="frame" x="100" y="162" width="634" height="90"/>
+                                <rect key="frame" x="100" y="174" width="634" height="90"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="R8G-Aq-sv0">
                                         <rect key="frame" x="0.0" y="0.0" width="634" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee ID" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="gUC-mV-4UF" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="335" id="9RM-Pm-YUf">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
-                                                    </constraint>
                                                     <constraint firstAttribute="height" constant="30" id="J7A-XX-j45">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="18"/>
                                                     </constraint>
@@ -61,7 +58,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="lZg-l7-fe5">
-                                                <rect key="frame" x="336" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="k7x-ZG-S45">
@@ -76,10 +73,10 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMP0008" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999999999998" translatesAutoresizingMaskIntoConstraints="NO" id="Zni-OB-Zh1">
-                                                <rect key="frame" x="367" y="0.0" width="267" height="30"/>
+                                                <rect key="frame" x="211" y="0.0" width="423" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="403" id="A5P-CW-KRc">
+                                                    <constraint firstAttribute="width" constant="423" id="A5P-CW-KRc">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="220"/>
                                                     </constraint>
                                                 </constraints>
@@ -96,14 +93,11 @@
                                         <rect key="frame" x="0.0" y="30" width="634" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="xUJ-Pa-ifQ" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="be5-bz-YGq">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="18"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="width" constant="335" id="le8-UE-ryd">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -119,7 +113,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="gaU-IW-63D">
-                                                <rect key="frame" x="336" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="vjZ-9z-J0D">
@@ -134,10 +128,10 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="L2Q-Y9-IcF">
-                                                <rect key="frame" x="367" y="0.0" width="267" height="30"/>
+                                                <rect key="frame" x="211" y="0.0" width="423" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="403" id="gWU-g2-duU">
+                                                    <constraint firstAttribute="width" constant="423" id="gWU-g2-duU">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="220"/>
                                                     </constraint>
                                                 </constraints>
@@ -154,14 +148,11 @@
                                         <rect key="frame" x="0.0" y="60" width="634" height="30"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Supervisor 2" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="PnS-vV-GrW" customClass="EdgeInsetLabel" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="179" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="30" id="Z4V-Zb-LM9">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="18"/>
-                                                    </constraint>
-                                                    <constraint firstAttribute="width" constant="335" id="b4R-8z-lL8">
-                                                        <variation key="heightClass=regular-widthClass=compact" constant="170"/>
                                                     </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -177,7 +168,7 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=":" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="agE-gx-OPR">
-                                                <rect key="frame" x="336" y="0.0" width="30" height="30"/>
+                                                <rect key="frame" x="180" y="0.0" width="30" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="30" id="m0x-t7-mq7">
@@ -192,10 +183,10 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="xx" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.34999999403953552" translatesAutoresizingMaskIntoConstraints="NO" id="Qrm-zn-NcM">
-                                                <rect key="frame" x="367" y="0.0" width="267" height="30"/>
+                                                <rect key="frame" x="211" y="0.0" width="423" height="30"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="403" id="nTZ-wx-tZf">
+                                                    <constraint firstAttribute="width" constant="423" id="nTZ-wx-tZf">
                                                         <variation key="heightClass=regular-widthClass=compact" constant="220"/>
                                                     </constraint>
                                                 </constraints>
@@ -210,8 +201,8 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
-                                <rect key="frame" x="100" y="314" width="634" height="405"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
+                                <rect key="frame" x="100" y="326" width="634" height="393"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-dp-SIY">
                                         <rect key="frame" x="0.0" y="0.0" width="634" height="150"/>
@@ -338,7 +329,7 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-1i-eyH" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="185" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="181" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View / Select / Switch Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-sy-rQV">
                                                 <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
@@ -374,7 +365,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnX-pp-LVh" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="270" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="262" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Leave Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-kl-Plx">
                                                 <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
@@ -410,7 +401,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Cs-OSS" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="355" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="343" width="634" height="50"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-T5-tse">
                                                 <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
@@ -428,8 +419,8 @@
                                             <constraint firstAttribute="bottom" secondItem="9Kg-T5-tse" secondAttribute="bottom" id="7Du-Ju-yCv"/>
                                             <constraint firstItem="9Kg-T5-tse" firstAttribute="top" secondItem="aZL-Cs-OSS" secondAttribute="top" id="a0y-iM-pVD"/>
                                             <constraint firstItem="9Kg-T5-tse" firstAttribute="leading" secondItem="aZL-Cs-OSS" secondAttribute="leading" id="paF-la-fsb"/>
-                                            <constraint firstAttribute="height" constant="104" id="t0D-Ao-1Hn">
-                                                <variation key="heightClass=regular-widthClass=compact" constant="64"/>
+                                            <constraint firstAttribute="height" constant="124" id="t0D-Ao-1Hn">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="74"/>
                                             </constraint>
                                             <constraint firstAttribute="trailing" secondItem="9Kg-T5-tse" secondAttribute="trailing" id="tEp-2n-Mid"/>
                                         </constraints>
@@ -455,11 +446,11 @@
                             <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="q5M-lG-DrM" secondAttribute="trailing" constant="32" id="0dL-UJ-o7f">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="958" id="4gd-6m-C8S">
+                                <variation key="heightClass=regular-widthClass=compact" constant="500"/>
+                            </constraint>
                             <constraint firstItem="fxH-Qh-lfu" firstAttribute="top" secondItem="kqd-IM-HEL" secondAttribute="bottom" constant="62" id="5EX-Q2-qSU">
                                 <variation key="heightClass=regular-widthClass=compact" constant="40"/>
-                            </constraint>
-                            <constraint firstItem="utI-9C-RHD" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="958" id="APy-TK-XoJ">
-                                <variation key="heightClass=regular-widthClass=compact" constant="500"/>
                             </constraint>
                             <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="fxH-Qh-lfu" secondAttribute="trailing" constant="100" id="BFA-3p-Pgu">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
@@ -467,11 +458,15 @@
                             <constraint firstItem="q5M-lG-DrM" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="31" id="BeW-My-0KZ">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>
-                            <constraint firstItem="kqd-IM-HEL" firstAttribute="top" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="8" id="Bix-LO-XXC"/>
+                            <constraint firstItem="kqd-IM-HEL" firstAttribute="top" secondItem="q5M-lG-DrM" secondAttribute="bottom" constant="20" id="Bix-LO-XXC">
+                                <variation key="heightClass=regular-widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="fxH-Qh-lfu" firstAttribute="leading" secondItem="utI-9C-RHD" secondAttribute="leading" constant="100" id="ItO-qz-wFR">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
-                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fxH-Qh-lfu" secondAttribute="bottom" constant="20" id="chq-Hh-Oqo"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fxH-Qh-lfu" secondAttribute="bottom" constant="20" id="chq-Hh-Oqo">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
                             <constraint firstItem="utI-9C-RHD" firstAttribute="trailing" secondItem="kqd-IM-HEL" secondAttribute="trailing" constant="100" id="fIq-0c-8fh">
                                 <variation key="heightClass=regular-widthClass=compact" constant="25"/>
                             </constraint>
@@ -536,7 +531,7 @@
                                     <nil key="highlightedColor"/>
                                 </label>
                             </subviews>
-                            <color key="backgroundColor" red="0.66666666669999997" green="0.66666666669999997" blue="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <color key="backgroundColor" red="0.20392156862745098" green="0.31764705882352939" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                             <constraints>
                                 <constraint firstAttribute="bottom" secondItem="Ap1-Cl-ybm" secondAttribute="bottom" constant="9" id="96V-kY-6dT"/>
                                 <constraint firstItem="Ap1-Cl-ybm" firstAttribute="top" secondItem="Cn3-7Q-es3" secondAttribute="top" constant="9" id="A7x-Jr-IHs"/>

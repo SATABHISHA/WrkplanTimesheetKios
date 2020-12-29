@@ -37,14 +37,14 @@
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="U3o-H8-MTC">
-                    <rect key="frame" x="0.0" y="0.0" width="311" height="148"/>
+                    <rect key="frame" x="0.0" y="0.0" width="331" height="190"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="138-o2-6fp">
-                            <rect key="frame" x="0.0" y="114" width="311" height="34"/>
+                            <rect key="frame" x="0.0" y="132" width="331" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lCe-9p-R9Q">
-                                    <rect key="frame" x="0.0" y="0.0" width="155" height="34"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="165" height="58"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Cancel">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -54,7 +54,7 @@
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="muc-y1-Rn2">
-                                    <rect key="frame" x="156" y="0.0" width="155" height="34"/>
+                                    <rect key="frame" x="166" y="0.0" width="165" height="58"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <state key="normal" title="Try Again">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -65,13 +65,13 @@
                                 </button>
                             </subviews>
                             <constraints>
-                                <constraint firstAttribute="height" constant="34" id="Asu-sR-slC">
-                                    <variation key="heightClass=regular-widthClass=compact" constant="27"/>
+                                <constraint firstAttribute="height" constant="58" id="Asu-sR-slC">
+                                    <variation key="heightClass=regular-widthClass=compact" constant="50"/>
                                 </constraint>
                             </constraints>
                         </stackView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M7o-Uf-ldt">
-                            <rect key="frame" x="47" y="40" width="217" height="36"/>
+                            <rect key="frame" x="47" y="59" width="237" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.4802109772" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -79,6 +79,29 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             </variation>
                         </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4EX-fJ-O8s">
+                            <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recognition Alert!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xpu-wn-XAB">
+                                    <rect key="frame" x="15" y="5" width="301" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <nil key="highlightedColor"/>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    </variation>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" red="0.2091936767" green="0.31860780719999998" blue="0.45782876010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="Xpu-wn-XAB" firstAttribute="top" secondItem="4EX-fJ-O8s" secondAttribute="top" constant="5" id="DFI-VG-WIL"/>
+                                <constraint firstAttribute="trailing" secondItem="Xpu-wn-XAB" secondAttribute="trailing" constant="15" id="OPT-ax-HJZ"/>
+                                <constraint firstItem="Xpu-wn-XAB" firstAttribute="leading" secondItem="4EX-fJ-O8s" secondAttribute="leading" constant="15" id="Rug-61-7Ii"/>
+                                <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="TUn-Jh-GPQ"/>
+                                <constraint firstAttribute="height" constant="34" id="dXy-8h-bFf"/>
+                                <constraint firstAttribute="bottom" secondItem="Xpu-wn-XAB" secondAttribute="bottom" constant="5" id="uND-cn-ls8"/>
+                            </constraints>
+                        </view>
                     </subviews>
                     <viewLayoutGuide key="safeArea" id="65o-mQ-cCV"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -89,15 +112,14 @@
                         <constraint firstItem="M7o-Uf-ldt" firstAttribute="leading" secondItem="65o-mQ-cCV" secondAttribute="leading" constant="47" id="B1Z-bF-Jiu">
                             <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
+                        <constraint firstItem="4EX-fJ-O8s" firstAttribute="leading" secondItem="U3o-H8-MTC" secondAttribute="leading" id="KlA-66-wPl"/>
                         <constraint firstItem="65o-mQ-cCV" firstAttribute="bottom" secondItem="138-o2-6fp" secondAttribute="bottom" id="Ua7-AQ-Lyf"/>
                         <constraint firstItem="65o-mQ-cCV" firstAttribute="trailing" secondItem="138-o2-6fp" secondAttribute="trailing" id="Zgk-Zf-Glb"/>
-                        <constraint firstItem="138-o2-6fp" firstAttribute="top" relation="lessThanOrEqual" secondItem="M7o-Uf-ldt" secondAttribute="bottom" constant="38" id="gsw-ox-pV9">
-                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                        </constraint>
-                        <constraint firstItem="M7o-Uf-ldt" firstAttribute="top" secondItem="65o-mQ-cCV" secondAttribute="top" constant="40" id="hye-qJ-dRN">
-                            <variation key="heightClass=regular-widthClass=compact" constant="20"/>
-                        </constraint>
+                        <constraint firstItem="M7o-Uf-ldt" firstAttribute="top" secondItem="4EX-fJ-O8s" secondAttribute="bottom" constant="25" id="cPf-aC-83W"/>
+                        <constraint firstItem="138-o2-6fp" firstAttribute="top" relation="lessThanOrEqual" secondItem="M7o-Uf-ldt" secondAttribute="bottom" constant="52.5" id="knW-Qa-qC6"/>
+                        <constraint firstItem="4EX-fJ-O8s" firstAttribute="top" secondItem="U3o-H8-MTC" secondAttribute="top" id="siU-TC-Pcu"/>
                         <constraint firstItem="138-o2-6fp" firstAttribute="leading" secondItem="U3o-H8-MTC" secondAttribute="leading" id="t4D-wz-OMd"/>
+                        <constraint firstAttribute="trailing" secondItem="4EX-fJ-O8s" secondAttribute="trailing" id="zYa-sa-iev"/>
                     </constraints>
                 </view>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5m2-t4-BUh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
