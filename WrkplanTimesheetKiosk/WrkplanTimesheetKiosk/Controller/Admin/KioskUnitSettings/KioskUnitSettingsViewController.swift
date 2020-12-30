@@ -156,6 +156,57 @@ class KioskUnitSettingsViewController: UIViewController {
     }
     //============keyboard will show/hide, code ends===========
     
+    //===============FormDetails Popup code starts===================
+    
+    
+    @IBOutlet weak var btnPopupOk: UIButton!
+    @IBAction func btnPopupOk(_ sender: Any) {
+        closeDetailsPopup()
+        self.performSegue(withIdentifier: "home", sender: nil)
+    }
+    
+    
+    @IBOutlet weak var stackViewPupupButton: UIStackView!
+    @IBOutlet var viewDetails: UIView!
+    @IBOutlet weak var name: UILabel!
+    func openDetailsPopup(name:String!){
+        blurEffect()
+        self.view.addSubview(viewDetails)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.height
+        viewDetails.transform = CGAffineTransform.init(scaleX: 1.3,y :1.3)
+        viewDetails.center = self.view.center
+        viewDetails.layer.cornerRadius = 10.0
+        //        addGoalChildFormView.layer.cornerRadius = 10.0
+        viewDetails.alpha = 0
+        viewDetails.sizeToFit()
+        
+        stackViewPupupButton.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+//        view_custom_btn_punchout.addBorder(side: .top, color: UIColor(hexFromString: "4f4f4f"), width: 1)
+//        btnPopupCancel.addBorder(side: .right, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        
+        UIView.animate(withDuration: 0.3){
+            self.viewDetails.alpha = 1
+            self.viewDetails.transform = CGAffineTransform.identity
+        }
+        
+        self.name.text = name!
+        //        self.confidencelabel.text = confidence!
+        
+        
+    }
+    func closeDetailsPopup(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewDetails.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewDetails.alpha = 0
+            self.blurEffectView.alpha = 0.3
+        }) { (success) in
+            self.viewDetails.removeFromSuperview();
+            self.canelBlurEffect()
+        }
+    }
+    //===============FormDetails Popup code ends===================
+    
     // ====================== Blur Effect Defiend START ================= \\
     var ActivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var blurEffectView: UIVisualEffectView!
@@ -342,12 +393,13 @@ extension KioskUnitSettingsViewController: XMLParserDelegate, NSURLConnectionDel
                             // this is just one of many style options
                             style.messageColor = .white
                             
-                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+//                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            openDetailsPopup(name: json["message"].stringValue)
                             
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                        /*    DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                                 // your code here For Pushing to Another Screen
                                 self.performSegue(withIdentifier: "home", sender: nil)
-                            }
+                            } */ //--commented on 30th dec
                             
                         }
                         else if status == "false"{
@@ -357,7 +409,8 @@ extension KioskUnitSettingsViewController: XMLParserDelegate, NSURLConnectionDel
                             style.messageColor = .white
                             
                             // present the toast with the new style
-                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+//                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style) //--commented on 30th dec
+                            openDetailsPopup(name: json["message"].stringValue)
                         }
                     }
                 }catch let error
