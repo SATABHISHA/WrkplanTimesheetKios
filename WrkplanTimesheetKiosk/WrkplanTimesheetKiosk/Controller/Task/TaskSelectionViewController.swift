@@ -86,8 +86,12 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func btn_done(_ sender: Any) {
-        print("ContractId-=>", self.ContractID!)
+      /*  print("ContractId-=>", self.ContractID!)
         print("TaskId-=>", self.TaskId!)
+        print("LaborCatId-=>", self.LaborCatId!)
+        print("CostTypeId-=>", self.CostTypeId!)
+        print("SuffixCode-=>", self.SuffixCode!) */
+        
 //        self.performSegue(withIdentifier: "homemain", sender: nil)
         Save(stringCheck: "Save", ContractID: self.ContractID!, TaskId: self.TaskId!, LaborCatId: self.LaborCatId!, CostTypeId: self.CostTypeId!, SuffixCode: self.SuffixCode!)
     }
