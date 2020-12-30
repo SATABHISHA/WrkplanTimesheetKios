@@ -328,7 +328,7 @@
                             <constraint firstItem="AOF-Gh-1Gb" firstAttribute="leading" secondItem="Nhg-RL-EWS" secondAttribute="leading" constant="50" id="6Pp-l0-xFP">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="Nhg-RL-EWS" firstAttribute="bottom" secondItem="pNc-6c-CrP" secondAttribute="bottom" id="7LK-gf-mYa">
+                            <constraint firstAttribute="bottom" secondItem="pNc-6c-CrP" secondAttribute="bottom" id="7LK-gf-mYa">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="pNc-6c-CrP" firstAttribute="leading" secondItem="Nhg-RL-EWS" secondAttribute="leading" id="92M-Oj-Kug">

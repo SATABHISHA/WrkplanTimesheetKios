@@ -15,13 +15,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="employeemale" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-Lw-gYC">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="employeemale" translatesAutoresizingMaskIntoConstraints="NO" id="VBP-Lw-gYC">
                                 <rect key="frame" x="715" y="34" width="80" height="80"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="80" id="YSq-5H-JIS">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="59"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="80" id="t8c-wc-ouU">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="50"/>
+                                    </constraint>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Joe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Fgt-0G-u49">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Joe" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="Fgt-0G-u49">
                                 <rect key="frame" x="61" y="47" width="614" height="55"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="55" id="9BD-DE-DtD"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -141,6 +150,23 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="qDm-dN-KwS"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Fgt-0G-u49" firstAttribute="leading" secondItem="qDm-dN-KwS" secondAttribute="leading" constant="61" id="FyJ-em-tOL">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="VBP-Lw-gYC" firstAttribute="top" secondItem="qDm-dN-KwS" secondAttribute="top" constant="34" id="Kfj-oD-5tf">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="Fgt-0G-u49" firstAttribute="top" secondItem="qDm-dN-KwS" secondAttribute="top" constant="47" id="L81-rd-Lbc">
+                                <variation key="heightClass=regular-widthClass=compact" constant="33"/>
+                            </constraint>
+                            <constraint firstItem="VBP-Lw-gYC" firstAttribute="leading" secondItem="Fgt-0G-u49" secondAttribute="trailing" constant="40" id="ZCj-dq-yb2">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                            <constraint firstItem="qDm-dN-KwS" firstAttribute="trailing" secondItem="VBP-Lw-gYC" secondAttribute="trailing" constant="39" id="odV-1h-Ttq">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                            </constraint>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="btn_leave_balance" destination="d5U-RG-pPd" id="TtT-Bu-zWb"/>
