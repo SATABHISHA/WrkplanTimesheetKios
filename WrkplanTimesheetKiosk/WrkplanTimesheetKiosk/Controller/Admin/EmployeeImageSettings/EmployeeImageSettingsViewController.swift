@@ -74,7 +74,7 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
             base64String = imageData?.base64EncodedString()
             print("base64-=>",self.enroll_names!)
             
-            loaderStart()
+//            loaderStart() //--commented on 4t jan 21
             EnrollImage(stringCheck: "IndexFacesResult", base64ImageString: base64String!)
         }
         
@@ -92,7 +92,11 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
         print("Selected-=>",id_person!)
         print("Selected")
         if rowData["aws_action"] as! String == "enroll"{
-            present(imagePicker, animated: true, completion: nil)
+            self.aws_face_id = rowData["aws_face_id"] as? String
+            let label1 = "Do you want to Enroll face image for \(rowData["name_first"] as! String) \(rowData["name_last"] as! String)?"
+            let label2 = "Tips for better Recognition result:\n1) Individual's face must be seen clearly and focused\n2) Individual's face must be at center of the camera's frame\n3) Avoid dark background"
+            openEnrollPopup(label1: label1, label2: label2)
+//            present(imagePicker, animated: true, completion: nil)
         }else if rowData["aws_action"] as! String == "delete"{
             self.aws_face_id = rowData["aws_face_id"] as? String
             print("delete")
@@ -211,6 +215,116 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
         }
     }
     //===============FormDetails Popup code ends===================
+    
+    //===============Enroll Image Popup code starts===================
+    @IBOutlet weak var btnPopupYes: UIButton!
+    @IBOutlet weak var btnPopupNo: UIButton!
+    @IBAction func btnPopupYes(_ sender: Any) {
+        closeEnrollPopup()
+//        self.performSegue(withIdentifier: "dashboard", sender: nil)
+//        self.DeleteImage(stringCheck: "DeleteFacesResult")
+        present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @IBAction func btnPopupNo(_ sender: Any) {
+        closeEnrollPopup()
+    }
+    
+    @IBOutlet weak var stackViewEnrollPopupButton: UIStackView!
+    @IBOutlet var viewEnroll: UIView!
+    @IBOutlet weak var enroll_label1: UILabel!
+    @IBOutlet weak var enroll_label2: UILabel!
+    func openEnrollPopup(label1: String?, label2: String?){
+        blurEffect()
+        self.view.addSubview(viewEnroll)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.height
+        viewEnroll.transform = CGAffineTransform.init(scaleX: 1.3,y :1.3)
+        viewEnroll.center = self.view.center
+        viewEnroll.layer.cornerRadius = 10.0
+        //        addGoalChildFormView.layer.cornerRadius = 10.0
+        viewEnroll.alpha = 0
+        viewEnroll.sizeToFit()
+        
+        stackViewEnrollPopupButton.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+//        view_custom_btn_punchout.addBorder(side: .top, color: UIColor(hexFromString: "4f4f4f"), width: 1)
+        btnPopupYes.addBorder(side: .right, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        
+        UIView.animate(withDuration: 0.3){
+            self.viewEnroll.alpha = 1
+            self.viewEnroll.transform = CGAffineTransform.identity
+        }
+        
+        self.enroll_label1.text = label1!
+        self.enroll_label2.text = label2!
+        //        self.confidencelabel.text = confidence!
+        
+        
+    }
+    func closeEnrollPopup(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewEnroll.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewEnroll.alpha = 0
+            self.blurEffectView.alpha = 0.3
+        }) { (success) in
+            self.viewEnroll.removeFromSuperview();
+            self.canelBlurEffect()
+        }
+    }
+    //===============Enroll Image Popup code ends===================
+    
+    //===============Enroll Image Submission Popup code starts===================
+    @IBOutlet weak var btnPopupStatusYes: UIButton!
+    
+    @IBAction func btnPopupStatusYes(_ sender: Any) {
+        closeEnrollStatusPopup()
+        loadData(stringCheck: "ListFace")
+    }
+    
+    @IBOutlet weak var stackViewEnrollStatusPopupButton: UIStackView!
+    @IBOutlet var viewEnrollStatus: UIView!
+    @IBOutlet weak var enroll_label_status: UILabel!
+    var isOpen: Bool!
+    func openEnrollStatusPopup(label1: String?){
+        if(isOpen == true){
+            self.canelBlurEffect()
+        }
+        blurEffect()
+        self.view.addSubview(viewEnrollStatus)
+        isOpen = true
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.height
+        viewEnrollStatus.transform = CGAffineTransform.init(scaleX: 1.3,y :1.3)
+        viewEnrollStatus.center = self.view.center
+        viewEnrollStatus.layer.cornerRadius = 10.0
+        //        addGoalChildFormView.layer.cornerRadius = 10.0
+        viewEnrollStatus.alpha = 0
+        viewEnrollStatus.sizeToFit()
+        
+        stackViewEnrollStatusPopupButton.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        
+        UIView.animate(withDuration: 0.3){
+            self.viewEnrollStatus.alpha = 1
+            self.viewEnrollStatus.transform = CGAffineTransform.identity
+        }
+        
+        self.enroll_label_status.text = label1!
+        //        self.confidencelabel.text = confidence!
+        
+        
+    }
+    func closeEnrollStatusPopup(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewEnrollStatus.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewEnrollStatus.alpha = 0
+            self.blurEffectView.alpha = 0.3
+        }) { (success) in
+            self.viewEnrollStatus.removeFromSuperview();
+            self.canelBlurEffect()
+        }
+    }
+    //===============Enroll Image Submission Popup code ends===================
+    
     // ====================== Blur Effect Defiend START ================= \\
     var ActivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var blurEffectView: UIVisualEffectView!
@@ -442,34 +556,38 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                         print("EnrollData->",json)
                         if json["Status"].stringValue == "true"{
                             print("No Internet is available")
-                            var style = ToastStyle()
+                            /*var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
                             
                             // present the toast with the new style
-                            self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)*/
+                            openEnrollStatusPopup(label1: json["Message"].stringValue)
                             
-                            loadData(stringCheck: "ListFace")
+//                            loadData(stringCheck: "ListFace") //--commented on 4t jan and also commented toast
                             
-                            loaderEnd()
+//                            loaderEnd()//commented on 4th jan
+                            
                         }else{
-                            var style = ToastStyle()
+                           /* var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
                             
                             // present the toast with the new style
-                            self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)*/
                             
-                            loadData(stringCheck: "ListFace")
+                            openEnrollStatusPopup(label1: json["Message"].stringValue)
                             
-                            loaderEnd()
+//                            loadData(stringCheck: "ListFace") //--commented on 4t jan and also commented toast
+                            
+//                            loaderEnd()//commented on 4th jan
                         }
                         //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
                     } catch let error
                     {
-                        loaderEnd()
+//                        loaderEnd()
                         print(error)
                     }
                     
@@ -485,7 +603,7 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                         let json = try JSON(data: dataFromString)
                         print("EnrollData->",json)
                         if json["Status"].stringValue == "true"{
-                            var style = ToastStyle()
+                           /* var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
@@ -493,11 +611,13 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                             // present the toast with the new style
                             self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)
                             
-                            loadData(stringCheck: "ListFace")
+                            loadData(stringCheck: "ListFace") */ // --commented on 4th jan 21
+                            
+                            openEnrollStatusPopup(label1: json["Message"].stringValue)
                             
                             loaderEnd()
                         }else{
-                            var style = ToastStyle()
+                          /*  var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
@@ -505,7 +625,9 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                             // present the toast with the new style
                             self.view.makeToast(json["Message"].stringValue, duration: 3.0, position: .bottom, style: style)
                             
-                            loadData(stringCheck: "ListFace")
+                            loadData(stringCheck: "ListFace") */ // --commented on 4th jan 21
+                            
+                            openEnrollStatusPopup(label1: json["Message"].stringValue)
                             
                             loaderEnd()
                         }
