@@ -97,7 +97,7 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
             self.aws_face_id = rowData["aws_face_id"] as? String
             print("delete")
             // Create Alert
-            var dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete?", preferredStyle: .alert)
+         /*   var dialogMessage = UIAlertController(title: "Confirm", message: "Are you sure you want to delete?", preferredStyle: .alert)
 
             // Create OK button with action handler
             let ok = UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
@@ -114,7 +114,8 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
             dialogMessage.addAction(cancel)
 
             // Present alert message to user
-            self.present(dialogMessage, animated: true, completion: nil)
+            self.present(dialogMessage, animated: true, completion: nil)*/ //commented as per req on 4th jan 21
+            openDetailsPopup(name: "Are you sure you want to delete?")
         }
     }
     
@@ -155,6 +156,61 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     }
     //--------tableview code ends-------
     
+    //===============FormDetails Popup code starts(added on 4th jan)===================
+    
+    
+    @IBOutlet weak var btnPopupOk: UIButton!
+    @IBOutlet weak var btnPopupCancel: UIButton!
+    @IBAction func btnPopupOk(_ sender: Any) {
+        closeDetailsPopup()
+//        self.performSegue(withIdentifier: "dashboard", sender: nil)
+        self.DeleteImage(stringCheck: "DeleteFacesResult")
+    }
+    
+    @IBAction func btn_cancel(_ sender: Any) {
+        closeDetailsPopup()
+    }
+    
+    @IBOutlet weak var stackViewPupupButton: UIStackView!
+    @IBOutlet var viewDetails: UIView!
+    @IBOutlet weak var name: UILabel!
+    func openDetailsPopup(name:String?){
+        blurEffect()
+        self.view.addSubview(viewDetails)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.height
+        viewDetails.transform = CGAffineTransform.init(scaleX: 1.3,y :1.3)
+        viewDetails.center = self.view.center
+        viewDetails.layer.cornerRadius = 10.0
+        //        addGoalChildFormView.layer.cornerRadius = 10.0
+        viewDetails.alpha = 0
+        viewDetails.sizeToFit()
+        
+        stackViewPupupButton.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+//        view_custom_btn_punchout.addBorder(side: .top, color: UIColor(hexFromString: "4f4f4f"), width: 1)
+        btnPopupOk.addBorder(side: .right, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        
+        UIView.animate(withDuration: 0.3){
+            self.viewDetails.alpha = 1
+            self.viewDetails.transform = CGAffineTransform.identity
+        }
+        
+        self.name.text = name!
+        //        self.confidencelabel.text = confidence!
+        
+        
+    }
+    func closeDetailsPopup(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewDetails.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewDetails.alpha = 0
+            self.blurEffectView.alpha = 0.3
+        }) { (success) in
+            self.viewDetails.removeFromSuperview();
+            self.canelBlurEffect()
+        }
+    }
+    //===============FormDetails Popup code ends===================
     // ====================== Blur Effect Defiend START ================= \\
     var ActivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var blurEffectView: UIVisualEffectView!

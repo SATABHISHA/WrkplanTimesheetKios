@@ -188,8 +188,13 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnPopupCancel" destination="Cgr-5Z-b01" id="Emj-vL-s5y"/>
+                        <outlet property="btnPopupOk" destination="byU-Ty-Htf" id="LZZ-kS-TJW"/>
                         <outlet property="custom_btn_back" destination="08f-S5-Hb1" id="C4m-Ms-HHH"/>
+                        <outlet property="name" destination="UIZ-TI-NVk" id="a9o-84-nKc"/>
+                        <outlet property="stackViewPupupButton" destination="xG2-vh-TQY" id="7SN-54-nWf"/>
                         <outlet property="tableviewEmployeeImageSettings" destination="Yl6-4X-xAG" id="rYD-eT-WGu"/>
+                        <outlet property="viewDetails" destination="lZa-x6-Epf" id="MML-Mp-R3d"/>
                         <segue destination="nQP-En-dvR" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="qUB-gC-dJv"/>
                     </connections>
                 </viewController>
@@ -203,16 +208,22 @@
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byU-Ty-Htf">
                                     <rect key="frame" x="0.0" y="0.0" width="165" height="58"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Cancel">
+                                    <state key="normal" title="Yes">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btnPopupOk:" destination="HxK-kj-lfb" eventType="touchUpInside" id="hIq-5c-19a"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Cgr-5Z-b01">
                                     <rect key="frame" x="166" y="0.0" width="165" height="58"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Try Again">
+                                    <state key="normal" title="No">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <connections>
+                                        <action selector="btn_cancel:" destination="HxK-kj-lfb" eventType="touchUpInside" id="Ug5-dD-sr0"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <constraints>
@@ -233,7 +244,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iMm-Iy-b5X">
                             <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alert!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIq-F6-RxT">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Delete Image" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LIq-F6-RxT">
                                     <rect key="frame" x="15" y="5" width="301" height="24"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
