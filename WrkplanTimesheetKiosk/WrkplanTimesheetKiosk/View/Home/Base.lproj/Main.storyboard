@@ -74,7 +74,7 @@
                         <outlet property="viewDetails" destination="xRD-ev-z06" id="SU3-PA-cib"/>
                         <outlet property="view_profile" destination="WHG-SL-n5K" id="9W2-lW-Cbo"/>
                         <segue destination="HGI-BN-fPM" kind="presentation" identifier="realtime" modalPresentationStyle="fullScreen" id="yBN-ZQ-SxO"/>
-                        <segue destination="p2Z-qc-3lS" kind="show" identifier="login" id="IdH-JN-vu6"/>
+                        <segue destination="p2Z-qc-3lS" kind="presentation" identifier="login" modalPresentationStyle="fullScreen" id="IdH-JN-vu6"/>
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="xRD-ev-z06">

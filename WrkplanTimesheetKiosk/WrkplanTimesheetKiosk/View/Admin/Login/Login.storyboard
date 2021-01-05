@@ -16,39 +16,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="810" height="1080"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8pV-5x-Nix" userLabel="TopView">
-                                <rect key="frame" x="0.0" y="0.0" width="810" height="278"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-us-5e3">
-                                        <rect key="frame" x="0.0" y="0.0" width="834" height="99"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gCV-S6-GHb">
-                                                <rect key="frame" x="663" y="24" width="140" height="79"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <state key="normal" image="home_menu"/>
-                                                <connections>
-                                                    <action selector="btn_home:" destination="dB7-WR-Ws7" eventType="touchUpInside" id="Ea6-wj-Cnw"/>
-                                                </connections>
-                                            </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Kiosk Admin Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-eX-mHG">
-                                                <rect key="frame" x="35" y="31" width="565" height="54"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                <nil key="highlightedColor"/>
-                                                <variation key="heightClass=regular-widthClass=compact">
-                                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                </variation>
-                                            </label>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
-                                    </view>
-                                </subviews>
-                                <viewLayoutGuide key="safeArea" id="4hf-M1-Ad5"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kQI-Kq-8qE" userLabel="BottomView">
                                 <rect key="frame" x="0.0" y="730" width="810" height="350"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
@@ -56,7 +23,7 @@
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8CH-0H-AGB" userLabel="MiddleView">
-                                <rect key="frame" x="0.0" y="278" width="810" height="452"/>
+                                <rect key="frame" x="0.0" y="270" width="810" height="452"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ohH-Ju-ok6">
@@ -145,14 +112,61 @@
                                 <viewLayoutGuide key="safeArea" id="eil-Zu-jkU"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9ma-us-5e3">
+                                <rect key="frame" x="0.0" y="0.0" width="810" height="105"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiosk Admin Login" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiS-eX-mHG">
+                                        <rect key="frame" x="35" y="32" width="300" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        </variation>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="home_menu" translatesAutoresizingMaskIntoConstraints="NO" id="43m-JN-bcL">
+                                        <rect key="frame" x="706" y="8" width="69" height="89"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="69" id="Yxk-xi-pCQ">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="40"/>
+                                            </constraint>
+                                            <constraint firstAttribute="height" constant="89" id="c4w-2b-azI">
+                                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                                            </constraint>
+                                        </constraints>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="qiS-eX-mHG" firstAttribute="leading" secondItem="9ma-us-5e3" secondAttribute="leading" constant="35" id="1Fh-L5-mK5">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="qiS-eX-mHG" firstAttribute="centerY" secondItem="9ma-us-5e3" secondAttribute="centerY" id="MHy-sf-5SA"/>
+                                    <constraint firstAttribute="trailing" secondItem="43m-JN-bcL" secondAttribute="trailing" constant="35" id="YbX-s0-Y3A">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
+                                    <constraint firstItem="43m-JN-bcL" firstAttribute="centerY" secondItem="9ma-us-5e3" secondAttribute="centerY" id="ci5-1x-X8q"/>
+                                    <constraint firstAttribute="height" constant="105" id="sXN-8X-kWB">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
+                                    </constraint>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="yaT-S0-WUh"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9ma-us-5e3" firstAttribute="leading" secondItem="yaT-S0-WUh" secondAttribute="leading" id="Bwp-3d-oiW"/>
+                            <constraint firstItem="9ma-us-5e3" firstAttribute="top" secondItem="by1-O1-A7D" secondAttribute="top" id="igG-Os-RVr"/>
+                            <constraint firstItem="9ma-us-5e3" firstAttribute="trailing" secondItem="yaT-S0-WUh" secondAttribute="trailing" id="qMQ-rr-iRE"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="corpId" destination="wrP-XL-Lvn" id="CFK-uL-d0s"/>
+                        <outlet property="home_img_custom" destination="43m-JN-bcL" id="MOy-p6-z11"/>
+                        <outlet property="home_yaxis_constraint" destination="ci5-1x-X8q" id="Gya-Xw-W6n"/>
                         <outlet property="label_login" destination="qiS-eX-mHG" id="sao-vm-gEu"/>
-                        <outlet property="login" destination="gCV-S6-GHb" id="Cgv-QA-V0Z"/>
+                        <outlet property="label_yaxis_constraint" destination="MHy-sf-5SA" id="9wV-qi-Bfl"/>
+                        <outlet property="navbar_height_constraint" destination="sXN-8X-kWB" id="K9e-hB-k9f"/>
                         <outlet property="password" destination="dB9-2Y-5ho" id="8X1-nA-AAl"/>
                         <outlet property="userName" destination="Uuj-Zj-kfa" id="b8J-1Z-Jj2"/>
                         <outlet property="view_custom_nav_bar" destination="9ma-us-5e3" id="lW1-tt-2TU"/>

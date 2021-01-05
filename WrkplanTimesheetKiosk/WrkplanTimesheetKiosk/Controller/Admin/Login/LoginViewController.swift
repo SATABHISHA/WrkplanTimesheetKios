@@ -12,6 +12,7 @@ import Toast
 
 class LoginViewController: UIViewController {
     
+    @IBOutlet weak var home_img_custom: UIImageView!
     @IBOutlet weak var view_custom_nav_bar: UIView!
     @IBOutlet weak var label_login: UILabel!
     @IBOutlet weak var login: UIButton!
@@ -19,7 +20,10 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var userName: UITextField!
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var btnCheckBox: UIButton!
+    @IBOutlet weak var label_yaxis_constraint: NSLayoutConstraint!
     
+    @IBOutlet weak var navbar_height_constraint: NSLayoutConstraint!
+    @IBOutlet weak var home_yaxis_constraint: NSLayoutConstraint!
     var checkBtnYN = 0
     //---Declaring shared preferences----
     let sharedpreferences=UserDefaults.standard
@@ -32,13 +36,16 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+       
         if UIScreen.main.nativeBounds.height == 2688 ||
             UIScreen.main.nativeBounds.height == 2436 ||
             UIScreen.main.nativeBounds.height == 2208 ||
-            UIScreen.main.nativeBounds.height == 1792{
-            
+            UIScreen.main.nativeBounds.height == 1792 ||
+            UIScreen.main.nativeBounds.height == 896{
+            label_yaxis_constraint.constant = 25
+            home_yaxis_constraint.constant = 25
+            navbar_height_constraint.constant = 107
         }
-        
         
 //        btnCheckBox.setImage(UIImage(named:"check_box_empty"), for: .normal)
 //        btnCheckBox.setImage(UIImage(named:"check_box"), for: .selected)
@@ -65,6 +72,11 @@ class LoginViewController: UIViewController {
         userName.resignFirstResponder()
         password.resignFirstResponder()
         //--------to hide keyboard code ends------
+        
+        //---Home OnClick
+        let tapGestureRecognizerLogout = UITapGestureRecognizer(target: self, action: #selector(Home(tapGestureRecognizer:)))
+        home_img_custom.isUserInteractionEnabled = true
+        home_img_custom.addGestureRecognizer(tapGestureRecognizerLogout)
     }
     
 
@@ -77,9 +89,13 @@ class LoginViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func btn_home(_ sender: Any) {
+    
+    //---Logout OnClick
+    @objc func Home(tapGestureRecognizer: UITapGestureRecognizer){
         self.performSegue(withIdentifier: "homemain", sender: nil)
+       
     }
+    
     
     @IBAction func btn_login(_ sender: Any) {
 //        self.performSegue(withIdentifier: "home", sender: nil)
