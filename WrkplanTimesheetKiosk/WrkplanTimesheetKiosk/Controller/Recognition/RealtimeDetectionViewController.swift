@@ -119,7 +119,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
                     self.handleFaceDetectionResults(results)
                     print("did detect \(results.count) face(s)")
                     self.captureSession.stopRunning()
-                    self.loaderStart()
+                    self.loaderStart1()
                     nestedif: if(results.count>1){
                         self.loaderEnd()
 //                        self.captureSession.stopRunning()
@@ -348,18 +348,22 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         loader.frame = view.bounds
         loader.alpha = 1
         view.addSubview(loader)
-        
-        let loadingIndicator = UIImageView(frame: CGRect(x: 10, y: 10, width: 250, height: 100))
+        var loadingIndicator: UIImageView!
+        if UIScreen.main.bounds.size.width < 768 { //IPHONE
+            loadingIndicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 175, height: 88))
+        }else { //Ipad
+            loadingIndicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 150))
+        }
         let transform: CGAffineTransform = CGAffineTransform(scaleX: 2, y: 2)
         activityIndicator.transform = transform
-        loadingIndicator.center = self.view.center;
+        loadingIndicator.center = self.view.center
         /*loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.white*/
-        let jeremyGif = UIImage.gifImageWithName("Processing")
-//        let imagesArray = [UIImage(named: "processing.gif")!]
-        let imagesArray = [jeremyGif!]
+//        let jeremyGif = UIImage.gifImageWithName("Processing")
+        let imagesArray = [UIImage(named: "Processingimagedata.png")!]
+//        let imagesArray = [jeremyGif!]
         loadingIndicator.animationImages = imagesArray
-        loadingIndicator.sizeToFit()
+//        loadingIndicator.sizeToFit()
         loadingIndicator.startAnimating();
         loader.contentView.addSubview(loadingIndicator)
         
@@ -680,3 +684,4 @@ extension UIImage{
            return animation
        }
 }
+
