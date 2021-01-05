@@ -20,18 +20,18 @@
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="97"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Kiosk Unit Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Jf-Le-xN1">
-                                        <rect key="frame" x="38" y="0.0" width="402" height="97"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <rect key="frame" x="35" y="0.0" width="405" height="97"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="1Jf-Le-xN1" firstAttribute="leading" secondItem="idw-AM-OtM" secondAttribute="leading" constant="38" id="iCg-SJ-Qiz">
+                                    <constraint firstItem="1Jf-Le-xN1" firstAttribute="leading" secondItem="idw-AM-OtM" secondAttribute="leading" constant="35" id="iCg-SJ-Qiz">
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="1Jf-Le-xN1" secondAttribute="trailing" constant="394" id="mwD-L9-UOP"/>

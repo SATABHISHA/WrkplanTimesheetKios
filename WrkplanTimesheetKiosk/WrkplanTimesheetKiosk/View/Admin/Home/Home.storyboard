@@ -155,36 +155,40 @@
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="105"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dashboard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eeO-R1-QWQ">
-                                        <rect key="frame" x="20" y="33.5" width="151.5" height="38.5"/>
+                                        <rect key="frame" x="35" y="31.5" width="179" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                        <variation key="heightClass=regular-widthClass=compact">
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                        </variation>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZv-2m-pbl">
+                                        <rect key="frame" x="627" y="33.5" width="172" height="38.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="172" id="SY8-17-SzI"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                        </variation>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Logout" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZv-2m-pbl">
-                                        <rect key="frame" x="652" y="31" width="172" height="43"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="172" id="SY8-17-SzI"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="36"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         </variation>
                                     </label>
                                 </subviews>
                                 <color key="backgroundColor" red="0.18039215689999999" green="0.3411764706" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstItem="eeO-R1-QWQ" firstAttribute="leading" secondItem="cyd-aw-afU" secondAttribute="leading" constant="20" id="2YS-fH-1hb"/>
+                                    <constraint firstItem="eeO-R1-QWQ" firstAttribute="leading" secondItem="cyd-aw-afU" secondAttribute="leading" constant="35" id="2YS-fH-1hb">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
                                     <constraint firstItem="eeO-R1-QWQ" firstAttribute="centerY" secondItem="cyd-aw-afU" secondAttribute="centerY" id="YFF-41-WJH">
                                         <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                     </constraint>
-                                    <constraint firstAttribute="trailing" secondItem="OZv-2m-pbl" secondAttribute="trailing" constant="10" id="dfz-xG-Lun"/>
+                                    <constraint firstAttribute="trailing" secondItem="OZv-2m-pbl" secondAttribute="trailing" constant="35" id="dfz-xG-Lun">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="105" id="fSz-TD-cvi">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="85"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="70"/>
                                     </constraint>
                                     <constraint firstItem="OZv-2m-pbl" firstAttribute="centerY" secondItem="cyd-aw-afU" secondAttribute="centerY" id="xsO-aT-Pe1">
                                         <variation key="heightClass=regular-widthClass=compact" constant="15"/>
@@ -263,6 +267,14 @@
             <point key="canvasLocation" x="302" y="205"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="OIa-NE-AIT">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="y8p-TD-qcZ">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+    </designables>
     <resources>
         <image name="employeeimagesettings" width="512" height="512"/>
         <image name="kiosksettings" width="512" height="512"/>

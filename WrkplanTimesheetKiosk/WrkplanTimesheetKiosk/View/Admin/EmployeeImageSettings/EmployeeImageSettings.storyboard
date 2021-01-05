@@ -20,16 +20,16 @@
                                 <rect key="frame" x="0.0" y="0.0" width="834" height="97"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Employee Image Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdG-Ef-2YM">
-                                        <rect key="frame" x="28" y="0.0" width="412" height="97"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="29"/>
+                                        <rect key="frame" x="35" y="0.0" width="411.5" height="97"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                         <variation key="heightClass=regular-widthClass=compact">
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                         </variation>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Back" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="08f-S5-Hb1">
-                                        <rect key="frame" x="632" y="32" width="172" height="33.5"/>
+                                        <rect key="frame" x="627" y="32" width="172" height="33.5"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="172" id="BVd-n1-rgB"/>
                                         </constraints>
@@ -45,13 +45,17 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="PdG-Ef-2YM" secondAttribute="bottom" id="CNP-WA-iIj"/>
                                     <constraint firstItem="PdG-Ef-2YM" firstAttribute="top" secondItem="iSO-sn-qRt" secondAttribute="top" id="GAO-hX-ili"/>
-                                    <constraint firstAttribute="trailing" secondItem="08f-S5-Hb1" secondAttribute="trailing" constant="30" id="Saf-LZ-Vs4"/>
+                                    <constraint firstAttribute="trailing" secondItem="08f-S5-Hb1" secondAttribute="trailing" constant="35" id="Saf-LZ-Vs4">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="97" id="VfC-cj-xtu">
                                         <variation key="heightClass=regular-widthClass=compact" constant="48"/>
                                     </constraint>
                                     <constraint firstItem="08f-S5-Hb1" firstAttribute="centerY" secondItem="iSO-sn-qRt" secondAttribute="centerY" id="fsQ-JX-hsc"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="PdG-Ef-2YM" secondAttribute="trailing" constant="394" id="lFe-rt-lzo"/>
-                                    <constraint firstItem="PdG-Ef-2YM" firstAttribute="leading" secondItem="iSO-sn-qRt" secondAttribute="leading" constant="28" id="rMS-jD-Gl0"/>
+                                    <constraint firstItem="PdG-Ef-2YM" firstAttribute="leading" secondItem="iSO-sn-qRt" secondAttribute="leading" constant="35" id="rMS-jD-Gl0">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="20"/>
+                                    </constraint>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Yl6-4X-xAG">
