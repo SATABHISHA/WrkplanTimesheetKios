@@ -19,6 +19,7 @@
 		172D29CE25751FD300C6E2A6 /* WrkplanTimesheetKioskTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D29CD25751FD300C6E2A6 /* WrkplanTimesheetKioskTests.swift */; };
 		172D29D925751FD300C6E2A6 /* WrkplanTimesheetKioskUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D29D825751FD300C6E2A6 /* WrkplanTimesheetKioskUITests.swift */; };
 		172D29F22575231500C6E2A6 /* CustomBorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172D29F12575231500C6E2A6 /* CustomBorder.swift */; };
+		172E5C4A25A499800061D520 /* Processing.gif in Resources */ = {isa = PBXBuildFile; fileRef = 172E5C4925A499800061D520 /* Processing.gif */; };
 		172EC43F25833F6100F96D6E /* RecognitionOptionViewLeaveBalanceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EC43E25833F6100F96D6E /* RecognitionOptionViewLeaveBalanceTableViewCell.swift */; };
 		172EC44D2583E1B500F96D6E /* TaskSelectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 172EC44C2583E1B500F96D6E /* TaskSelectionTableViewCell.swift */; };
 		17514006257E58970090EFD5 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 17514005257E58970090EFD5 /* Login.storyboard */; };
@@ -85,6 +86,7 @@
 		172D29D825751FD300C6E2A6 /* WrkplanTimesheetKioskUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WrkplanTimesheetKioskUITests.swift; sourceTree = "<group>"; };
 		172D29DA25751FD300C6E2A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		172D29F12575231500C6E2A6 /* CustomBorder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomBorder.swift; sourceTree = "<group>"; };
+		172E5C4925A499800061D520 /* Processing.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = Processing.gif; sourceTree = "<group>"; };
 		172EC43E25833F6100F96D6E /* RecognitionOptionViewLeaveBalanceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecognitionOptionViewLeaveBalanceTableViewCell.swift; sourceTree = "<group>"; };
 		172EC44C2583E1B500F96D6E /* TaskSelectionTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskSelectionTableViewCell.swift; sourceTree = "<group>"; };
 		17514005257E58970090EFD5 /* Login.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Login.storyboard; sourceTree = "<group>"; };
@@ -252,6 +254,7 @@
 		172D29F0257522F400C6E2A6 /* Config */ = {
 			isa = PBXGroup;
 			children = (
+				172E5C4925A499800061D520 /* Processing.gif */,
 				172D29F12575231500C6E2A6 /* CustomBorder.swift */,
 				1764571E257F852500274773 /* AppConfig.swift */,
 				17645729257F8E7D00274773 /* Connectivity.swift */,
@@ -512,6 +515,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1798F602257FA56500EEE62C /* KioskUnitSettings.storyboard in Resources */,
+				172E5C4A25A499800061D520 /* Processing.gif in Resources */,
 				1798F5EB257FA0A500EEE62C /* EmployeeImageSettings.storyboard in Resources */,
 				17514006257E58970090EFD5 /* Login.storyboard in Resources */,
 				1798FCE025764BB900A7EFCA /* AttendanceRecord.storyboard in Resources */,

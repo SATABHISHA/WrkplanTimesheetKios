@@ -12,6 +12,7 @@ import VideoToolbox
 import Alamofire
 import SwiftyJSON
 import SWXMLHash
+import ImageIO
 
 class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutputSampleBufferDelegate {
 
@@ -78,7 +79,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
          self.previewLayer.frame = self.view.frame */
         
         //----code to show realtime session in a view
-        self.previewLayer.videoGravity = .resize
+        self.previewLayer.videoGravity = .resizeAspectFill
         self.previewLayer.connection?.videoOrientation = AVCaptureVideoOrientation.portrait
         self.viewCamera.layer.addSublayer(self.previewLayer)
         self.previewLayer.frame = self.viewCamera.frame
@@ -128,7 +129,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
 //                        break nestedif
                     }else {
                        // break nestedif
-                        self.loaderEnd()
+//                        self.loaderEnd() //on 5th jan
                         //----convert cvpixel to base64, code starts
                         let image = UIImage(ciImage: CIImage(cvPixelBuffer: image))
                         var imageData = image.jpegData(compressionQuality: 0.2)
@@ -316,8 +317,10 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
     var activityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
     var blurEffectView: UIVisualEffectView!
     var loader: UIVisualEffectView!
+    
     func loaderStart() {
         // ====================== Blur Effect START ================= \\
+        
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         loader = UIVisualEffectView(effect: blurEffect)
         loader.frame = view.bounds
@@ -339,6 +342,30 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         // ====================== Blur Effect END ================= \\
     }
     
+    func loaderStart1(){
+        let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
+        loader = UIVisualEffectView(effect: blurEffect)
+        loader.frame = view.bounds
+        loader.alpha = 1
+        view.addSubview(loader)
+        
+        let loadingIndicator = UIImageView(frame: CGRect(x: 10, y: 10, width: 250, height: 100))
+        let transform: CGAffineTransform = CGAffineTransform(scaleX: 2, y: 2)
+        activityIndicator.transform = transform
+        loadingIndicator.center = self.view.center;
+        /*loadingIndicator.hidesWhenStopped = true
+        loadingIndicator.style = UIActivityIndicatorView.Style.white*/
+        let jeremyGif = UIImage.gifImageWithName("Processing")
+//        let imagesArray = [UIImage(named: "processing.gif")!]
+        let imagesArray = [jeremyGif!]
+        loadingIndicator.animationImages = imagesArray
+        loadingIndicator.sizeToFit()
+        loadingIndicator.startAnimating();
+        loader.contentView.addSubview(loadingIndicator)
+        
+        // screen roted and size resize automatic
+        loader.autoresizingMask = [.flexibleBottomMargin, .flexibleHeight, .flexibleLeftMargin, .flexibleRightMargin, .flexibleTopMargin, .flexibleWidth];
+    }
     func loaderEnd() {
         self.loader.removeFromSuperview();
     }
@@ -442,6 +469,7 @@ extension RealtimeDetectionViewController: XMLParserDelegate, NSURLConnectionDel
         print(String(format : "foundCharacters / value %@", string))
         if strCheck == "Recognize"{
             if self.RecognizeFaceResult == true {
+                
 //                eventData.removeAll()
                 //                self.removeAllArrayValue()
                 
@@ -476,15 +504,18 @@ extension RealtimeDetectionViewController: XMLParserDelegate, NSURLConnectionDel
                             self.performSegue(withIdentifier: "recognitionoption", sender: nil)
                             print("Employeename test-=>",RealtimeDetectionViewController.EmployeeName)
 //                                    break nestedif1
+                            loaderEnd()
                         }else {
                             self.openDetailsPopup(name: "Sorry! Couldn't recognize")
 //                                    break nestedif1
+                            loaderEnd()
                         }
                         
                     }
                     catch let error
                     {
                         print(error)
+                        loaderEnd()
                     }
                     
                 }
@@ -492,4 +523,160 @@ extension RealtimeDetectionViewController: XMLParserDelegate, NSURLConnectionDel
         }
         
     }
+}
+extension UIImage{
+    public class func gifImageWithData(_ data: Data) -> UIImage? {
+           guard let source = CGImageSourceCreateWithData(data as CFData, nil) else {
+               print("image doesn't exist")
+               return nil
+           }
+           
+           return UIImage.animatedImageWithSource(source)
+       }
+       
+       public class func gifImageWithURL(_ gifUrl:String) -> UIImage? {
+           guard let bundleURL:URL? = URL(string: gifUrl)
+               else {
+                   print("image named \"\(gifUrl)\" doesn't exist")
+                   return nil
+           }
+           guard let imageData = try? Data(contentsOf: bundleURL!) else {
+               print("image named \"\(gifUrl)\" into NSData")
+               return nil
+           }
+           
+           return gifImageWithData(imageData)
+       }
+       
+       public class func gifImageWithName(_ name: String) -> UIImage? {
+           guard let bundleURL = Bundle.main
+               .url(forResource: name, withExtension: "gif") else {
+                   print("SwiftGif: This image named \"\(name)\" does not exist")
+                   return nil
+           }
+           guard let imageData = try? Data(contentsOf: bundleURL) else {
+               print("SwiftGif: Cannot turn image named \"\(name)\" into NSData")
+               return nil
+           }
+           
+           return gifImageWithData(imageData)
+       }
+       
+       class func delayForImageAtIndex(_ index: Int, source: CGImageSource!) -> Double {
+           var delay = 0.1
+           
+           let cfProperties = CGImageSourceCopyPropertiesAtIndex(source, index, nil)
+           let gifProperties: CFDictionary = unsafeBitCast(
+               CFDictionaryGetValue(cfProperties,
+                   Unmanaged.passUnretained(kCGImagePropertyGIFDictionary).toOpaque()),
+               to: CFDictionary.self)
+           
+           var delayObject: AnyObject = unsafeBitCast(
+               CFDictionaryGetValue(gifProperties,
+                   Unmanaged.passUnretained(kCGImagePropertyGIFUnclampedDelayTime).toOpaque()),
+               to: AnyObject.self)
+           if delayObject.doubleValue == 0 {
+               delayObject = unsafeBitCast(CFDictionaryGetValue(gifProperties,
+                   Unmanaged.passUnretained(kCGImagePropertyGIFDelayTime).toOpaque()), to: AnyObject.self)
+           }
+           
+           delay = delayObject as! Double
+           
+           if delay < 0.1 {
+               delay = 0.1
+           }
+           
+           return delay
+       }
+       
+       class func gcdForPair(_ a: Int?, _ b: Int?) -> Int {
+           var a = a
+           var b = b
+           if b == nil || a == nil {
+               if b != nil {
+                   return b!
+               } else if a != nil {
+                   return a!
+               } else {
+                   return 0
+               }
+           }
+           
+        if a! < b! {
+               let c = a
+               a = b
+               b = c
+           }
+           
+           var rest: Int
+           while true {
+               rest = a! % b!
+               
+               if rest == 0 {
+                   return b!
+               } else {
+                   a = b
+                   b = rest
+               }
+           }
+       }
+       
+       class func gcdForArray(_ array: Array<Int>) -> Int {
+           if array.isEmpty {
+               return 1
+           }
+           
+           var gcd = array[0]
+           
+           for val in array {
+               gcd = UIImage.gcdForPair(val, gcd)
+           }
+           
+           return gcd
+       }
+       
+       class func animatedImageWithSource(_ source: CGImageSource) -> UIImage? {
+           let count = CGImageSourceGetCount(source)
+           var images = [CGImage]()
+           var delays = [Int]()
+           
+           for i in 0..<count {
+               if let image = CGImageSourceCreateImageAtIndex(source, i, nil) {
+                   images.append(image)
+               }
+               
+               let delaySeconds = UIImage.delayForImageAtIndex(Int(i),
+                   source: source)
+               delays.append(Int(delaySeconds * 1000.0)) // Seconds to ms
+           }
+           
+           let duration: Int = {
+               var sum = 0
+               
+               for val: Int in delays {
+                   sum += val
+               }
+               
+               return sum
+           }()
+           
+           let gcd = gcdForArray(delays)
+           var frames = [UIImage]()
+           
+           var frame: UIImage
+           var frameCount: Int
+           for i in 0..<count {
+               frame = UIImage(cgImage: images[Int(i)])
+               frameCount = Int(delays[Int(i)] / gcd)
+               
+               for _ in 0..<frameCount {
+                   frames.append(frame)
+               }
+           }
+           
+           let animation = UIImage.animatedImage(with: frames,
+               duration: Double(duration) / 1000.0)
+           
+           return animation
+       }
 }
