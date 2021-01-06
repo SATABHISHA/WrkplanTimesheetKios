@@ -557,7 +557,7 @@
                                 <constraint firstItem="I84-eY-nTS" firstAttribute="leading" secondItem="Hai-D1-Rpg" secondAttribute="leading" constant="12" id="tGQ-hW-0Gl"/>
                             </constraints>
                         </view>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Up To 08/11/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-Ux-YS7">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 08/11/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-Ux-YS7">
                             <rect key="frame" x="12" y="98" width="306" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="3er-07-fR0"/>

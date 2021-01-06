@@ -233,8 +233,8 @@
                             <constraint firstItem="Xjr-SP-zIy" firstAttribute="top" secondItem="Fgt-0G-u49" secondAttribute="bottom" constant="52" id="q6u-FO-sCY">
                                 <variation key="heightClass=regular-widthClass=compact" constant="22"/>
                             </constraint>
-                            <constraint firstItem="qDm-dN-KwS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k7v-Pe-fxo" secondAttribute="bottom" constant="117" id="tpW-z1-Dyl">
-                                <variation key="heightClass=regular-widthClass=compact" constant="60"/>
+                            <constraint firstItem="qDm-dN-KwS" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="k7v-Pe-fxo" secondAttribute="bottom" constant="20" id="tpW-z1-Dyl">
+                                <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
                             <constraint firstItem="qDm-dN-KwS" firstAttribute="trailing" secondItem="oGu-5c-ifH" secondAttribute="trailing" constant="64" id="tuN-v0-Is3">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>

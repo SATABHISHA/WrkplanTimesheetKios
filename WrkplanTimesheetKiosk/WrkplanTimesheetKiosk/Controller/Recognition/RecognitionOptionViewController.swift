@@ -235,6 +235,8 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
         viewLeaveBalancePopup.alpha = 0
         viewLeaveBalancePopup.sizeToFit()
         
+        labelLeaveBalanceEmployeeName.text = RealtimeDetectionViewController.EmployeeName!
+        
         UIView.animate(withDuration: 0.3){
             self.viewLeaveBalancePopup.alpha = 1
             self.viewLeaveBalancePopup.transform = CGAffineTransform.identity
@@ -620,7 +622,7 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
                             objectArray.removeAll()
                         }
                         
-                        labelLeaveBalanceEmployeeName.text = UserSingletonModel.sharedInstance.EmpName
+//                        labelLeaveBalanceEmployeeName.text = UserSingletonModel.sharedInstance.EmpName
                         labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
                         
                         if let dictionary = json as? [String: Any] {

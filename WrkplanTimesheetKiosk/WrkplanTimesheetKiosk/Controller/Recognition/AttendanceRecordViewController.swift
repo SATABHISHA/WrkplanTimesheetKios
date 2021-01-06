@@ -274,7 +274,7 @@ extension AttendanceRecordViewController: XMLParserDelegate, NSURLConnectionDele
                             objectArray.removeAll()
                         }
 
-                        labelLeaveBalanceEmployeeName.text = UserSingletonModel.sharedInstance.EmpName
+                        labelLeaveBalanceEmployeeName.text = RealtimeDetectionViewController.EmployeeName!
                         labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
                         
                         if let dictionary = json as? [String: Any] {
