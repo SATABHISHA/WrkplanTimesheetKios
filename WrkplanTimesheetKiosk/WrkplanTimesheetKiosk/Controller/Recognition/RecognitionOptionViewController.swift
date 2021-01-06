@@ -626,7 +626,21 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
                         }
                         
 //                        labelLeaveBalanceEmployeeName.text = UserSingletonModel.sharedInstance.EmpName
-                        labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
+//                        labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
+                        
+                        //-------date formatter code starts------
+                        let dateFormatterGet = DateFormatter()
+                //        dateFormatterGet.dateFormat = "MM/dd/yyyy hh:mm:ss a"
+                        dateFormatterGet.dateFormat = "dd/MM/yyyy" //--for test version
+                        
+                        let dateFormatterPrint = DateFormatter()
+                        dateFormatterPrint.dateFormat = "dd-MMM-yyyy"
+                        
+                        
+                        let date = dateFormatterGet.date(from: (response["LeaveDateUpto"].stringValue))
+                        print("DateTest-=>",response["LeaveDateUpto"].stringValue)
+                        //-------date formatter code ends------
+                        labelLeaveBalanceDate.text = "Up To \(dateFormatterPrint.string(from: date!))"
                         
                         if let dictionary = json as? [String: Any] {
                             dict = (dictionary["LeaveBalanceItems"] as? [String:Any])!
