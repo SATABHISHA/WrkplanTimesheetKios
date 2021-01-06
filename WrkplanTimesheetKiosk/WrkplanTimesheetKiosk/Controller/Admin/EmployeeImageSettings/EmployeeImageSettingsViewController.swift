@@ -139,22 +139,28 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
             cell.label_enroll_status.textColor = UIColor(hexFromString: "9A9A9A")
             
             cell.view_custom_btn.borderWidth = 1
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "00FF00")
+            cell.view_custom_btn.cornerRadius = 7
+            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Enroll \n Image"
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "4f4f4f")
         }else if dict["aws_action"] as? String == "delete"{
             cell.label_enroll_status.text = "Image \n Enrolled"
             cell.label_enroll_status.textColor = UIColor(hexFromString: "095CB0")
             
             cell.view_custom_btn.borderWidth = 1
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "FF0000")
+            cell.view_custom_btn.cornerRadius = 7
+            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Remove \n Image"
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
         }else{
             cell.label_enroll_status.text = "Image \n Enrolled"
             cell.label_enroll_status.textColor = UIColor(hexFromString: "095CB0")
             
             cell.view_custom_btn.borderWidth = 1
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "FF0000")
+            cell.view_custom_btn.cornerRadius = 7
+            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Remove \n Image"
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
         }
         return cell
     }
