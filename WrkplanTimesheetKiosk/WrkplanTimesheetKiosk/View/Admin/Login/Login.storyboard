@@ -40,10 +40,15 @@
                                     <textField opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Corporate ID" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wrP-XL-Lvn">
                                         <rect key="frame" x="168" y="69" width="570" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.88669178370000001" green="0.88669178370000001" blue="0.88669178370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         </variation>
@@ -75,10 +80,18 @@
                                     <textField opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dB9-2Y-5ho">
                                         <rect key="frame" x="168" y="245" width="570" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.88669178370000001" green="0.88669178370000001" blue="0.88669178370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         </variation>
@@ -87,11 +100,22 @@
                                         <rect key="frame" x="68" y="350" width="672" height="77"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                         <viewLayoutGuide key="safeArea" id="dWd-SZ-FSC"/>
-                                        <color key="backgroundColor" red="0.12827723090000001" green="0.35637401569999999" blue="0.47320891139999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="backgroundColor" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                                         <state key="normal" title="LOGIN">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="5"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <connections>
                                             <action selector="btn_login:" destination="dB7-WR-Ws7" eventType="touchUpInside" id="m8y-FV-kxr"/>
                                         </connections>
@@ -99,10 +123,18 @@
                                     <textField opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Uuj-Zj-kfa">
                                         <rect key="frame" x="168" y="155" width="570" height="74"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" red="0.88669178370000001" green="0.88669178370000001" blue="0.88669178370000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" red="0.31764705879999999" green="0.31764705879999999" blue="0.31764705879999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.38431372549019605" green="0.38431372549019605" blue="0.38431372549019605" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
                                         <variation key="heightClass=regular-widthClass=compact">
                                             <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         </variation>
@@ -168,7 +200,10 @@
                         <outlet property="navbar_height_constraint" destination="sXN-8X-kWB" id="K9e-hB-k9f"/>
                         <outlet property="password" destination="dB9-2Y-5ho" id="8X1-nA-AAl"/>
                         <outlet property="userName" destination="Uuj-Zj-kfa" id="b8J-1Z-Jj2"/>
+                        <outlet property="view_corpid" destination="ohH-Ju-ok6" id="reX-GK-BUW"/>
                         <outlet property="view_custom_nav_bar" destination="9ma-us-5e3" id="lW1-tt-2TU"/>
+                        <outlet property="view_pwd" destination="Bh3-05-OVB" id="3E8-kb-w4R"/>
+                        <outlet property="view_username" destination="JxK-Ll-EOi" id="04f-b0-UHJ"/>
                         <segue destination="Fxb-wv-lk7" kind="presentation" identifier="home" modalPresentationStyle="fullScreen" id="YWj-hc-ZLr"/>
                         <segue destination="BFj-0R-4U1" kind="presentation" identifier="homemain" modalPresentationStyle="fullScreen" id="Dgi-N7-fNa"/>
                     </connections>

@@ -74,7 +74,7 @@
                                                     <subviews>
                                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6P7-gH-zQ0" userLabel="ViewBorderLine">
                                                             <rect key="frame" x="0.0" y="92.5" width="794" height="0.5"/>
-                                                            <color key="backgroundColor" red="0.74509803921568629" green="0.74509803921568629" blue="0.74509803921568629" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="backgroundColor" red="0.68235294117647061" green="0.68235294117647061" blue="0.68235294117647061" alpha="1" colorSpace="calibratedRGB"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="0.69999999999999996" id="VJb-ni-nUc"/>
                                                             </constraints>

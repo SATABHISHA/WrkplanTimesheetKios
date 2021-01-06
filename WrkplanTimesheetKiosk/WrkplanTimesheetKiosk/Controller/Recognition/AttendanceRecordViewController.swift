@@ -91,6 +91,7 @@ class AttendanceRecordViewController: UIViewController, UITableViewDataSource, U
     @IBOutlet weak var labelLeaveBalanceEmployeeName: UILabel!
     @IBOutlet weak var labelLeaveBalanceDate: UILabel!
     
+    @IBOutlet weak var btnLeaveBalanceOk: UIButton!
     @IBAction func btnLeaveBalanceOk(_ sender: Any) {
         cancelLeaveBalancePopup()
     }
@@ -106,6 +107,8 @@ class AttendanceRecordViewController: UIViewController, UITableViewDataSource, U
         //        addGoalChildFormView.layer.cornerRadius = 10.0
         viewLeaveBalancePopup.alpha = 0
         viewLeaveBalancePopup.sizeToFit()
+        
+        btnLeaveBalanceOk.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
         
         UIView.animate(withDuration: 0.3){
             self.viewLeaveBalancePopup.alpha = 1
@@ -275,7 +278,22 @@ extension AttendanceRecordViewController: XMLParserDelegate, NSURLConnectionDele
                         }
 
                         labelLeaveBalanceEmployeeName.text = RealtimeDetectionViewController.EmployeeName!
-                        labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
+//                        labelLeaveBalanceDate.text = "Up To \(response["LeaveDateUpto"].stringValue)"
+                        
+                        //-------date formatter code starts------
+                        let dateFormatterGet = DateFormatter()
+                //        dateFormatterGet.dateFormat = "MM/dd/yyyy hh:mm:ss a"
+                        dateFormatterGet.dateFormat = "dd/MM/yyyy" //--for test version
+                        
+                        let dateFormatterPrint = DateFormatter()
+                        dateFormatterPrint.dateFormat = "dd-MMM-yyyy"
+                        
+                        
+                        let date = dateFormatterGet.date(from: (response["LeaveDateUpto"].stringValue))
+                        print("DateTest-=>",response["LeaveDateUpto"].stringValue)
+                        //-------date formatter code ends------
+                        labelLeaveBalanceDate.text = "Up To \(dateFormatterPrint.string(from: date!))"
+                        
                         
                         if let dictionary = json as? [String: Any] {
                             dict = (dictionary["LeaveBalanceItems"] as? [String:Any])!

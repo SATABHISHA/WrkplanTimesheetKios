@@ -24,6 +24,10 @@ class LoginViewController: UIViewController {
     
     @IBOutlet weak var navbar_height_constraint: NSLayoutConstraint!
     @IBOutlet weak var home_yaxis_constraint: NSLayoutConstraint!
+    @IBOutlet weak var view_corpid: UIView!
+    @IBOutlet weak var view_username: UIView!
+    @IBOutlet weak var view_pwd: UIView!
+    
     var checkBtnYN = 0
     //---Declaring shared preferences----
     let sharedpreferences=UserDefaults.standard
@@ -77,6 +81,23 @@ class LoginViewController: UIViewController {
         let tapGestureRecognizerLogout = UITapGestureRecognizer(target: self, action: #selector(Home(tapGestureRecognizer:)))
         home_img_custom.isUserInteractionEnabled = true
         home_img_custom.addGestureRecognizer(tapGestureRecognizerLogout)
+        
+        //--corner radius
+//        view_corpid.addBorder(side: .left, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        view_corpid.roundCorners([.topLeft,.bottomLeft], radius: 5)
+        corpId.layer.borderWidth = 1
+        corpId.roundCorners([.topRight,.bottomRight], radius: 5)
+        corpId.borderColor = UIColor(hexFromString: "626262")
+        
+        
+        
+        view_username.roundCorners([.topLeft,.bottomLeft], radius: 5)
+        userName.roundCorners([.topRight,.bottomRight], radius: 5)
+        
+        view_pwd.roundCorners([.topLeft,.bottomLeft], radius: 5)
+        password.roundCorners([.topRight,.bottomRight], radius: 5)
+//        view_corpid.roundCorners(.bottomLeft, radius: 5)
+        
     }
     
 
@@ -448,3 +469,14 @@ extension UITextField {
         self.rightViewMode = .always
     }
 }
+//-------code for UIView shape(rounded corners), starts-------------
+extension UIView {
+    func roundCorners(_ corners:UIRectCorner, radius: CGFloat) {
+        let path = UIBezierPath(roundedRect: self.bounds, byRoundingCorners: corners, cornerRadii: CGSize(width: radius, height: radius))
+        let mask = CAShapeLayer()
+        mask.path = path.cgPath
+        self.layer.mask = mask
+    }
+}
+
+//-------code for UIView shape(rounded corners), ends-------------
