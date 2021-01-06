@@ -219,6 +219,7 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
     @IBOutlet weak var labelLeaveBalanceEmployeeName: UILabel!
     @IBOutlet weak var labelLeaveBalanceDate: UILabel!
     
+    @IBOutlet weak var btnLeaveBalanceOk: UIButton!
     @IBAction func btnLeaveBalanceOk(_ sender: Any) {
         cancelLeaveBalancePopup()
     }
@@ -236,6 +237,8 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
         viewLeaveBalancePopup.sizeToFit()
         
         labelLeaveBalanceEmployeeName.text = RealtimeDetectionViewController.EmployeeName!
+        
+        btnLeaveBalanceOk.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
         
         UIView.animate(withDuration: 0.3){
             self.viewLeaveBalancePopup.alpha = 1

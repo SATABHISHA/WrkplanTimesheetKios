@@ -202,13 +202,13 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
-                                <rect key="frame" x="100" y="326" width="634" height="615"/>
+                                <rect key="frame" x="100" y="326" width="634" height="645.5"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-dp-SIY">
-                                        <rect key="frame" x="0.0" y="0.0" width="634" height="150"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="634" height="208"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="e1w-bm-EXw" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="0.0" width="297.5" height="150"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="297.5" height="208"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="0CB-2b-mJG">
                                                         <rect key="frame" x="0.0" y="23" width="297.5" height="33"/>
@@ -265,7 +265,7 @@
                                                 </userDefinedRuntimeAttributes>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4zE-jW-gMk" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                                <rect key="frame" x="336.5" y="0.0" width="297.5" height="150"/>
+                                                <rect key="frame" x="336.5" y="0.0" width="297.5" height="208"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Punch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="8Cz-hr-GH0">
                                                         <rect key="frame" x="0.0" y="23" width="297.5" height="30"/>
@@ -329,10 +329,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-1i-eyH" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="181" width="634" height="124"/>
+                                        <rect key="frame" x="0.0" y="239" width="634" height="172.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View / Select / Switch Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-sy-rQV">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="172.5"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,10 +365,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnX-pp-LVh" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="336" width="634" height="124"/>
+                                        <rect key="frame" x="0.0" y="442.5" width="634" height="172"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Leave Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-kl-Plx">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="172"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,10 +401,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Cs-OSS" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="491" width="634" height="124"/>
+                                        <rect key="frame" x="0.0" y="645.5" width="634" height="0.0"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-T5-tse">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="0.0"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -479,6 +479,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="btnLeaveBalanceOk" destination="4ra-Cl-tNh" id="blI-3e-0Qb"/>
                         <outlet property="custom_btn_cancel" destination="aZL-Cs-OSS" id="oim-A9-Ong"/>
                         <outlet property="custom_btn_check_out" destination="4zE-jW-gMk" id="4Bq-7L-Nse"/>
                         <outlet property="custom_btn_checkin" destination="e1w-bm-EXw" id="jgi-02-6he"/>
@@ -522,11 +523,11 @@
                     <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxX="YES" flexibleMinY="YES" heightSizable="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cn3-7Q-es3">
-                            <rect key="frame" x="0.0" y="0.0" width="326" height="45"/>
+                            <rect key="frame" x="0.0" y="0.0" width="326" height="34"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Current Leave Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ap1-Cl-ybm">
-                                    <rect key="frame" x="12" y="9" width="214" height="27"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                    <rect key="frame" x="12" y="9" width="171.5" height="16"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                 </label>
@@ -536,11 +537,11 @@
                                 <constraint firstAttribute="bottom" secondItem="Ap1-Cl-ybm" secondAttribute="bottom" constant="9" id="96V-kY-6dT"/>
                                 <constraint firstItem="Ap1-Cl-ybm" firstAttribute="top" secondItem="Cn3-7Q-es3" secondAttribute="top" constant="9" id="A7x-Jr-IHs"/>
                                 <constraint firstItem="Ap1-Cl-ybm" firstAttribute="leading" secondItem="Cn3-7Q-es3" secondAttribute="leading" constant="12" id="TCm-39-qXs"/>
-                                <constraint firstAttribute="height" constant="45" id="TLw-Ld-lhR"/>
+                                <constraint firstAttribute="height" constant="34" id="TLw-Ld-lhR"/>
                             </constraints>
                         </view>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hai-D1-Rpg">
-                            <rect key="frame" x="0.0" y="45" width="326" height="45"/>
+                            <rect key="frame" x="0.0" y="34" width="326" height="45"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Snyder B, Oscar" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I84-eY-nTS">
                                     <rect key="frame" x="12" y="9" width="141" height="27"/>
@@ -558,7 +559,7 @@
                             </constraints>
                         </view>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" 08/11/2019" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9b1-Ux-YS7">
-                            <rect key="frame" x="12" y="98" width="306" height="24"/>
+                            <rect key="frame" x="12" y="87" width="306" height="24"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="24" id="3er-07-fR0"/>
                             </constraints>
@@ -567,7 +568,7 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <tableView clipsSubviews="YES" tag="2" contentMode="scaleAspectFit" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tBx-co-Vsg">
-                            <rect key="frame" x="0.0" y="142" width="326" height="127"/>
+                            <rect key="frame" x="0.0" y="131" width="326" height="119"/>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <prototypes>
                                 <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="23" id="uSk-x2-NGS" customClass="RecognitionOptionViewLeaveBalanceTableViewCell" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
@@ -595,8 +596,11 @@
                                                         <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.000" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-UH-gq0">
-                                                        <rect key="frame" x="223" y="3" width="62" height="20"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-25.000" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="hcY-UH-gq0">
+                                                        <rect key="frame" x="221" y="3" width="100" height="20"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="100" id="hBJ-yz-Lhz"/>
+                                                        </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <color key="textColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
@@ -605,15 +609,15 @@
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
                                                     <constraint firstItem="u2k-9E-G3P" firstAttribute="top" secondItem="C5L-IV-bFY" secondAttribute="top" constant="3" id="GDu-QS-kKF"/>
-                                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="hcY-UH-gq0" secondAttribute="trailing" constant="5" id="S0q-l4-Xaq"/>
-                                                    <constraint firstItem="hcY-UH-gq0" firstAttribute="leading" secondItem="u2k-9E-G3P" secondAttribute="trailing" constant="10" id="SsL-OU-khg"/>
+                                                    <constraint firstAttribute="trailing" secondItem="hcY-UH-gq0" secondAttribute="trailing" constant="5" id="LOd-9l-vur"/>
+                                                    <constraint firstAttribute="bottom" secondItem="hcY-UH-gq0" secondAttribute="bottom" id="Xuz-Ms-DN2"/>
                                                     <constraint firstAttribute="bottom" secondItem="Upx-Mb-sUO" secondAttribute="bottom" id="bdk-oB-I20"/>
-                                                    <constraint firstItem="hcY-UH-gq0" firstAttribute="top" secondItem="C5L-IV-bFY" secondAttribute="top" constant="3" id="eS1-r1-7nR"/>
-                                                    <constraint firstAttribute="bottom" secondItem="hcY-UH-gq0" secondAttribute="bottom" id="ihU-0a-DRd"/>
                                                     <constraint firstItem="u2k-9E-G3P" firstAttribute="leading" secondItem="Upx-Mb-sUO" secondAttribute="trailing" constant="10" id="kv9-iA-2md"/>
                                                     <constraint firstItem="Upx-Mb-sUO" firstAttribute="top" secondItem="C5L-IV-bFY" secondAttribute="top" constant="3" id="o1H-jB-2QP"/>
+                                                    <constraint firstItem="hcY-UH-gq0" firstAttribute="leading" secondItem="u2k-9E-G3P" secondAttribute="trailing" constant="8" id="p9Q-ko-9VL"/>
                                                     <constraint firstAttribute="bottom" secondItem="u2k-9E-G3P" secondAttribute="bottom" id="wM8-eG-Vnz"/>
                                                     <constraint firstItem="Upx-Mb-sUO" firstAttribute="leading" secondItem="C5L-IV-bFY" secondAttribute="leading" constant="3" id="wsT-Fe-qq7"/>
+                                                    <constraint firstItem="hcY-UH-gq0" firstAttribute="top" secondItem="C5L-IV-bFY" secondAttribute="top" constant="3" id="xHn-Na-t9O"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
@@ -633,14 +637,14 @@
                             </prototypes>
                         </tableView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4ra-Cl-tNh">
-                            <rect key="frame" x="0.0" y="277" width="326" height="41"/>
-                            <color key="backgroundColor" red="0.90136319399999998" green="0.89822477099999998" blue="0.8979149461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <rect key="frame" x="0.0" y="258" width="326" height="60"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="41" id="Vsf-Cf-Lx0"/>
+                                <constraint firstAttribute="height" constant="60" id="Vsf-Cf-Lx0"/>
                             </constraints>
-                            <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <state key="normal" title="OK">
-                                <color key="titleColor" white="0.5311322584" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
                                 <action selector="btnLeaveBalanceOk:" destination="WyR-YW-jUO" eventType="touchUpInside" id="agM-LC-95c"/>
@@ -652,10 +656,10 @@
                     <constraints>
                         <constraint firstItem="tBx-co-Vsg" firstAttribute="leading" secondItem="myx-jl-n5p" secondAttribute="leading" id="1Vv-ug-730"/>
                         <constraint firstItem="4ra-Cl-tNh" firstAttribute="trailing" secondItem="myx-jl-n5p" secondAttribute="trailing" id="FoZ-hU-Wab"/>
-                        <constraint firstItem="myx-jl-n5p" firstAttribute="bottom" secondItem="tBx-co-Vsg" secondAttribute="bottom" constant="49" id="Gfo-xS-lNv"/>
                         <constraint firstItem="tBx-co-Vsg" firstAttribute="trailing" secondItem="myx-jl-n5p" secondAttribute="trailing" id="JgF-W8-ubg"/>
                         <constraint firstItem="4ra-Cl-tNh" firstAttribute="top" secondItem="tBx-co-Vsg" secondAttribute="bottom" constant="8" id="LrA-Nt-A1d"/>
                         <constraint firstItem="Cn3-7Q-es3" firstAttribute="trailing" secondItem="myx-jl-n5p" secondAttribute="trailing" id="PKr-l2-m2l"/>
+                        <constraint firstItem="4ra-Cl-tNh" firstAttribute="bottom" secondItem="myx-jl-n5p" secondAttribute="bottom" id="buI-Dv-b0a"/>
                         <constraint firstItem="4ra-Cl-tNh" firstAttribute="leading" secondItem="myx-jl-n5p" secondAttribute="leading" id="dSw-PW-KTs"/>
                         <constraint firstItem="Cn3-7Q-es3" firstAttribute="top" secondItem="myx-jl-n5p" secondAttribute="top" id="dex-rM-a0S"/>
                         <constraint firstItem="9b1-Ux-YS7" firstAttribute="top" secondItem="Hai-D1-Rpg" secondAttribute="bottom" constant="8" id="gBA-DX-LLz"/>
@@ -839,29 +843,14 @@
         </scene>
     </scenes>
     <designables>
-        <designable name="4zE-jW-gMk">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="DgO-1i-eyH">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
         <designable name="PnS-vV-GrW">
-            <size key="intrinsicContentSize" width="150.5" height="30"/>
-        </designable>
-        <designable name="aZL-Cs-OSS">
-            <size key="intrinsicContentSize" width="30" height="34"/>
-        </designable>
-        <designable name="e1w-bm-EXw">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="135.5" height="30"/>
         </designable>
         <designable name="gUC-mV-4UF">
-            <size key="intrinsicContentSize" width="149.5" height="30"/>
-        </designable>
-        <designable name="jnX-pp-LVh">
-            <size key="intrinsicContentSize" width="30" height="34"/>
+            <size key="intrinsicContentSize" width="134.5" height="30"/>
         </designable>
         <designable name="xUJ-Pa-ifQ">
-            <size key="intrinsicContentSize" width="147.5" height="30"/>
+            <size key="intrinsicContentSize" width="132.5" height="30"/>
         </designable>
     </designables>
     <resources>
