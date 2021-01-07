@@ -151,10 +151,10 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1234-001-02 (Default)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qd7-Gk-XyV">
-                                                            <rect key="frame" x="71" y="81" width="455" height="22"/>
+                                                            <rect key="frame" x="71" y="79" width="455" height="24"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="22" id="l6r-cO-Czk">
-                                                                    <variation key="heightClass=regular-widthClass=compact" constant="13"/>
+                                                                <constraint firstAttribute="height" constant="24" id="l6r-cO-Czk">
+                                                                    <variation key="heightClass=regular-widthClass=compact" constant="15"/>
                                                                 </constraint>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
@@ -165,7 +165,7 @@
                                                             </variation>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Bricklaying" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VWb-vs-0CQ">
-                                                            <rect key="frame" x="71" y="42" width="455" height="37"/>
+                                                            <rect key="frame" x="71" y="42" width="455" height="35"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
@@ -194,7 +194,7 @@
                                                                     <nil key="highlightedColor"/>
                                                                 </label>
                                                             </subviews>
-                                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="width" constant="104" id="PMM-vs-GIY">
                                                                     <variation key="heightClass=regular-widthClass=compact" constant="60"/>
@@ -398,11 +398,6 @@
             <point key="canvasLocation" x="321" y="78"/>
         </scene>
     </scenes>
-    <designables>
-        <designable name="SBg-qj-0u9">
-            <size key="intrinsicContentSize" width="30" height="30"/>
-        </designable>
-    </designables>
     <resources>
         <image name="employeemale" width="128" height="128"/>
         <namedColor name="AccentColor">
