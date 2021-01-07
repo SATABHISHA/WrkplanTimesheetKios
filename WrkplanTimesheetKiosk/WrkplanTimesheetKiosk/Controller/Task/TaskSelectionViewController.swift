@@ -66,6 +66,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         
         label_emp_name.text = RealtimeDetectionViewController.EmployeeName!
         label_date.text = Date.getCurrentDateMonthForAttendanceRecordControllel()
+        
         // Do any additional setup after loading the view.
         self.tablevieTaskSelect.delegate = self
         self.tablevieTaskSelect.dataSource = self
