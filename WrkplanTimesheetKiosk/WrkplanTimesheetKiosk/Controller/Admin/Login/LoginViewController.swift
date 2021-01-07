@@ -83,8 +83,9 @@ class LoginViewController: UIViewController {
         home_img_custom.addGestureRecognizer(tapGestureRecognizerLogout)
         
         //--corner radius
+        //--commented as getting issues on corner radius
 //        view_corpid.addBorder(side: .left, color: UIColor(hexFromString: "7F7F7F"), width: 1)
-        view_corpid.roundCorners([.topLeft,.bottomLeft], radius: 5)
+       /* view_corpid.roundCorners([.topLeft,.bottomLeft], radius: 5)
         corpId.layer.borderWidth = 1
         corpId.roundCorners([.topRight,.bottomRight], radius: 5)
         corpId.borderColor = UIColor(hexFromString: "626262")
@@ -95,7 +96,7 @@ class LoginViewController: UIViewController {
         userName.roundCorners([.topRight,.bottomRight], radius: 5)
         
         view_pwd.roundCorners([.topLeft,.bottomLeft], radius: 5)
-        password.roundCorners([.topRight,.bottomRight], radius: 5)
+        password.roundCorners([.topRight,.bottomRight], radius: 5) */
 //        view_corpid.roundCorners(.bottomLeft, radius: 5)
         
     }

@@ -65,11 +65,11 @@
                                         </variation>
                                     </label>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HUQ-4t-ngX">
-                                        <rect key="frame" x="617" y="0.0" width="117" height="101"/>
+                                        <rect key="frame" x="609" y="0.0" width="117" height="101"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JWb-D7-rJh">
-                                                <rect key="frame" x="0.0" y="8" width="117" height="23"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <rect key="frame" x="0.0" y="8" width="117" height="21.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -77,8 +77,8 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="7.82" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uPv-29-7Zn">
-                                                <rect key="frame" x="0.0" y="31" width="117" height="38.5"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="32"/>
+                                                <rect key="frame" x="0.0" y="29.5" width="117" height="43"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="36"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -86,8 +86,8 @@
                                                 </variation>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hour(s)" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a7x-4W-Sb7">
-                                                <rect key="frame" x="0.0" y="69.5" width="117" height="23"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="19"/>
+                                                <rect key="frame" x="0.0" y="72.5" width="117" height="18"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                                 <variation key="heightClass=regular-widthClass=compact">
@@ -128,7 +128,9 @@
                                     <constraint firstItem="8A4-eh-2IF" firstAttribute="top" secondItem="AOF-Gh-1Gb" secondAttribute="top" constant="5" id="IgE-WM-N2u"/>
                                     <constraint firstAttribute="bottom" secondItem="HUQ-4t-ngX" secondAttribute="bottom" id="NZt-wy-bHx"/>
                                     <constraint firstAttribute="trailing" relation="lessThanOrEqual" secondItem="8A4-eh-2IF" secondAttribute="trailing" constant="466" id="bq0-LI-Nr2"/>
-                                    <constraint firstAttribute="trailing" secondItem="HUQ-4t-ngX" secondAttribute="trailing" id="i70-lj-mTA"/>
+                                    <constraint firstAttribute="trailing" secondItem="HUQ-4t-ngX" secondAttribute="trailing" constant="8" id="i70-lj-mTA">
+                                        <variation key="heightClass=regular-widthClass=compact" constant="5"/>
+                                    </constraint>
                                     <constraint firstAttribute="bottom" secondItem="8A4-eh-2IF" secondAttribute="bottom" constant="5" id="ms2-p8-chd"/>
                                     <constraint firstItem="HUQ-4t-ngX" firstAttribute="top" secondItem="AOF-Gh-1Gb" secondAttribute="top" id="nAI-2y-tDB"/>
                                 </constraints>
@@ -211,7 +213,7 @@
                                                                 </constraint>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                                            <color key="textColor" red="0.24531384310000001" green="0.25348154909999998" blue="0.26649228489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                            <color key="textColor" red="0.70588235294117641" green="0.70980392156862748" blue="0.71372549019607845" alpha="1" colorSpace="calibratedRGB"/>
                                                             <nil key="highlightedColor"/>
                                                             <variation key="heightClass=regular-widthClass=compact">
                                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
