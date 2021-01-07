@@ -31,6 +31,7 @@ struct EmployeeTimeSheetDetails{
 class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TaskSelectionTableViewCellDelegate {
     
 
+    @IBOutlet weak var label_total_hrs: UILabel!
     @IBOutlet weak var label_date: UILabel!
     @IBOutlet weak var tablevieTaskSelect: UITableView!
     @IBOutlet weak var label_emp_name: UILabel!
@@ -64,7 +65,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         btn_cancel.addBorder(side: .right, color: UIColor(hexFromString: "4f4f4f"), width: 1.0)
         
         label_emp_name.text = RealtimeDetectionViewController.EmployeeName!
-        label_date.text = Date.getCurrentDate()
+        label_date.text = Date.getCurrentDateMonthForAttendanceRecordControllel()
         // Do any additional setup after loading the view.
         self.tablevieTaskSelect.delegate = self
         self.tablevieTaskSelect.dataSource = self
@@ -83,6 +84,8 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         //tablevieTaskSelect.estimatedRowHeight = 150
         
         loadData(stringCheck: "Task")
+        
+        
     }
     
     @IBAction func btn_done(_ sender: Any) {
@@ -398,6 +401,13 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
                             tableChildData.append(data)
                         }
                         //------newly adding ends-----
+                        //--added on 7th jan starts
+                        var total: Double = 0.00
+                        for i in 0..<tableChildData.count{
+                            total = total + Double(tableChildData[i].Hour)!
+                        }
+                        label_total_hrs.text = String(total)
+                        //---added on 7th jan ends
                         
                         if arrRes.count>0 {
                             tablevieTaskSelect.reloadData()
