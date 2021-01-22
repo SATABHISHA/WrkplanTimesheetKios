@@ -202,7 +202,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="31" translatesAutoresizingMaskIntoConstraints="NO" id="fxH-Qh-lfu">
-                                <rect key="frame" x="100" y="326" width="634" height="393"/>
+                                <rect key="frame" x="100" y="326" width="634" height="615"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="dFg-dp-SIY">
                                         <rect key="frame" x="0.0" y="0.0" width="634" height="150"/>
@@ -329,10 +329,10 @@
                                         </constraints>
                                     </stackView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DgO-1i-eyH" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="181" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="181" width="634" height="124"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View / Select / Switch Task" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000000000002" translatesAutoresizingMaskIntoConstraints="NO" id="L8P-sy-rQV">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -365,10 +365,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jnX-pp-LVh" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="262" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="336" width="634" height="124"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View Leave Balance" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.40000000596046448" translatesAutoresizingMaskIntoConstraints="NO" id="LCH-kl-Plx">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,10 +401,10 @@
                                         </userDefinedRuntimeAttributes>
                                     </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aZL-Cs-OSS" customClass="DesignableButton" customModule="WrkplanTimesheetKiosk" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="343" width="634" height="50"/>
+                                        <rect key="frame" x="0.0" y="491" width="634" height="124"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cancel" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Kg-T5-tse">
-                                                <rect key="frame" x="0.0" y="0.0" width="634" height="50"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="634" height="124"/>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="34"/>
                                                 <color key="textColor" red="0.30980392156862746" green="0.30980392156862746" blue="0.30980392156862746" alpha="1" colorSpace="calibratedRGB"/>
@@ -843,14 +843,29 @@
         </scene>
     </scenes>
     <designables>
+        <designable name="4zE-jW-gMk">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="DgO-1i-eyH">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
         <designable name="PnS-vV-GrW">
-            <size key="intrinsicContentSize" width="135.5" height="30"/>
+            <size key="intrinsicContentSize" width="150.5" height="30"/>
+        </designable>
+        <designable name="aZL-Cs-OSS">
+            <size key="intrinsicContentSize" width="30" height="34"/>
+        </designable>
+        <designable name="e1w-bm-EXw">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="gUC-mV-4UF">
-            <size key="intrinsicContentSize" width="134.5" height="30"/>
+            <size key="intrinsicContentSize" width="149.5" height="30"/>
+        </designable>
+        <designable name="jnX-pp-LVh">
+            <size key="intrinsicContentSize" width="30" height="34"/>
         </designable>
         <designable name="xUJ-Pa-ifQ">
-            <size key="intrinsicContentSize" width="132.5" height="30"/>
+            <size key="intrinsicContentSize" width="147.5" height="30"/>
         </designable>
     </designables>
     <resources>

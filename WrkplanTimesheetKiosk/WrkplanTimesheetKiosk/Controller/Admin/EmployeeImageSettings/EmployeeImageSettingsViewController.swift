@@ -413,7 +413,9 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
         self.strCheck = stringCheck
         //        self.activityIndicator.startAnimating()
         
-        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><IndexFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><EmployeeId>\(id_person!)</EmployeeId><ExternalImageId>%@</ExternalImageId><ImageBase64>%@</ImageBase64></IndexFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!),String(describing: self.enroll_names!),String(describing: base64ImageString))
+//        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><IndexFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><EmployeeId>\(id_person!)</EmployeeId><ExternalImageId>%@</ExternalImageId><ImageBase64>%@</ImageBase64></IndexFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!),String(describing: self.enroll_names!),String(describing: base64ImageString))
+        
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><IndexFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><EmployeeId>\(id_person!)</EmployeeId><ImageBase64>%@</ImageBase64></IndexFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!),String(describing: base64ImageString))  //--haved deleted external image id on 22nd jan as per security reasons
         
         var soapMessage = text
         let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=IndexFaces")
