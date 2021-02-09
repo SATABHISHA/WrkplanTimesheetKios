@@ -771,7 +771,7 @@
                                             </variation>
                                         </label>
                                     </subviews>
-                                    <color key="backgroundColor" red="0.2091936767" green="0.31860780719999998" blue="0.45782876010000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="backgroundColor" red="0.20784313725490194" green="0.31764705882352939" blue="0.45882352941176469" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="34" id="DGx-o7-6Pp"/>
                                         <constraint firstItem="TLL-GO-Y4j" firstAttribute="leading" secondItem="IWJ-z7-kBA" secondAttribute="leading" constant="15" id="JCc-Kb-km3"/>
