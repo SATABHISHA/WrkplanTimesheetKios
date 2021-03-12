@@ -543,7 +543,8 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
         let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSubmit xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType></TaskHourSubmit></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: ""))
         
         var soapMessage = text
-        let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=TaskHourUpdate")
+//        let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=TaskHourUpdate") //--commented on 25th feb
+        let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=TaskHourSubmit") //--added on 25th feb
         let theRequest = NSMutableURLRequest(url: url! as URL)
         let msgLength = String(soapMessage.count)
         

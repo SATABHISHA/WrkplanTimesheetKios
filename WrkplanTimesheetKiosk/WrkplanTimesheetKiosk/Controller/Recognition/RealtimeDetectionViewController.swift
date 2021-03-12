@@ -132,7 +132,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
 //                        self.loaderEnd() //on 5th jan
                         //----convert cvpixel to base64, code starts
                         let image = UIImage(ciImage: CIImage(cvPixelBuffer: image))
-                        var imageData = image.jpegData(compressionQuality: 0.2)
+                        let imageData = image.jpegData(compressionQuality: 0.7)
                         let base64String = imageData?.base64EncodedString()
 //                                                    print("base64convert-=>",base64String)
                         
