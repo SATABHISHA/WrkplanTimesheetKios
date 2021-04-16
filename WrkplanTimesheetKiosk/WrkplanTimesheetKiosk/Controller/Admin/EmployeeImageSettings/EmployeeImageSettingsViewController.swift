@@ -163,6 +163,16 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! EmployeeImageSettingsTableViewCell
         cell.delegate = self
+        if indexPath.row == 0{
+            if UIScreen.main.bounds.size.width < 768 { //IPHONE
+                cell.ViewTopConstraint.constant = 1
+            }else { //Ipad
+                cell.ViewTopConstraint.constant = 10
+            }
+            
+        }else{
+            cell.ViewTopConstraint.constant = 1
+        }
         
         let dict = filteredTableData[indexPath.row]
         cell.label_name.text = "\(dict["name_first"] as! String) \(dict["name_last"] as! String)"

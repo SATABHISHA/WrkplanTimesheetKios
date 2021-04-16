@@ -12,6 +12,9 @@ protocol EmployeeImageSettingsTableViewCellDelegate : class {
 }
 class EmployeeImageSettingsTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var ViewTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var ViewTopBorderLineTopConstraint: NSLayoutConstraint!
+    @IBOutlet weak var ViewTopBorderLine: UIView!
     @IBOutlet weak var label_name: UILabel!
     @IBOutlet weak var label_enroll_status: UILabel!
     @IBOutlet weak var view_custom_btn: UIView!
