@@ -10,7 +10,7 @@ import SwiftyJSON
 import Alamofire
 import Toast
 
-class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EmployeeImageSettingsTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, EmployeeImageSettingsTableViewCellDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UISearchBarDelegate {
     
     @IBOutlet weak var custom_btn_back: UILabel!
     @IBOutlet weak var tableviewEmployeeImageSettings: UITableView!
@@ -30,6 +30,8 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     let imagePicker = UIImagePickerController()
     var base64String:String!
     
+    @IBOutlet weak var searchBar: UISearchBar!
+    var filteredTableData = [[String: AnyObject]]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,8 +40,23 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
         //---tableiew
         self.tableviewEmployeeImageSettings.delegate = self
         self.tableviewEmployeeImageSettings.dataSource = self
-        tableviewEmployeeImageSettings.backgroundColor = UIColor.white
+        self.searchBar.delegate = self
         
+        tableviewEmployeeImageSettings.backgroundColor = UIColor.white
+        searchBar.searchTextField.backgroundColor = UIColor.white
+        searchBar.backgroundColor = UIColor.white
+        searchBar.searchTextField.textColor = UIColor.black
+        if UIScreen.main.bounds.size.width < 768 { //IPHONE
+            searchBar.searchTextField.font = .systemFont(ofSize: 17.0)
+        }else { //Ipad
+            searchBar.searchTextField.font = .systemFont(ofSize: 31.0)
+        }
+        
+//        searchBar.searchTextField.borderColor = UIColor.lightGray
+//        searchBar.searchTextField.borderWidth = 1
+//        searchBar.searchTextField.cornerRadius = 10
+        searchBar.layer.borderWidth = 10
+        searchBar.layer.borderColor = UIColor.white.cgColor
         //---camera
         imagePicker.delegate = self
         imagePicker.sourceType = .camera
@@ -83,10 +100,25 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     
     
     //--------tableview code starts-------
-    
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        // When there is no text, filteredData is the same as the original data
+        // When user has entered text into the search box
+        // Use the filter method to iterate over all items in the data array
+        // For each item, return true if the item should be included and false if the
+        // item should NOT be included
+        filteredTableData = searchText.isEmpty ? arrRes : arrRes.filter({(object) -> Bool in
+            let employeename = "\(object["name_first"] as! String) \(object["name_last"] as! String)"
+//            guard let employee_name = employeename else {return false}
+            
+            return employeename.lowercased().contains(searchText.lowercased())
+        })
+
+        self.tableviewEmployeeImageSettings.reloadData()
+    }
+
     func EmployeeImageSettingsTableViewCellAddOrRemoveDidTapAddOrView(_ sender: EmployeeImageSettingsTableViewCell) {
         guard let tappedIndexPath = tableviewEmployeeImageSettings.indexPath(for: sender) else {return}
-        let rowData = arrRes[tappedIndexPath.row]
+        let rowData = filteredTableData[tappedIndexPath.row]
         self.enroll_names = "\(rowData["name_first"] as! String)-\(rowData["name_last"] as! String)"
         self.id_person = rowData["id_person"] as? Int
         print("Selected-=>",id_person!)
@@ -125,14 +157,14 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return arrRes.count
+        return filteredTableData.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! EmployeeImageSettingsTableViewCell
         cell.delegate = self
         
-        let dict = arrRes[indexPath.row]
+        let dict = filteredTableData[indexPath.row]
         cell.label_name.text = "\(dict["name_first"] as! String) \(dict["name_last"] as! String)"
         if dict["aws_action"] as? String == "enroll"{
             cell.label_enroll_status.text = "No \n Image"
@@ -510,6 +542,7 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                         if json["response"]["status"].stringValue == "true"{
                         if let resData = json["employees"].arrayObject{
                             self.arrRes = resData as! [[String:AnyObject]]
+                            self.filteredTableData = resData as! [[String:AnyObject]]
                         }
                         if arrRes.count>0 {
                             tableviewEmployeeImageSettings.reloadData()
