@@ -22,7 +22,9 @@ class HomeViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         
-        if UIScreen.main.nativeBounds.height == 2688 ||
+        ChangeStatusBarColor() //added on 19th April 21
+        
+       /* if UIScreen.main.nativeBounds.height == 2688 ||
             UIScreen.main.nativeBounds.height == 2436 ||
             UIScreen.main.nativeBounds.height == 2208 ||
             UIScreen.main.nativeBounds.height == 1792 ||
@@ -30,7 +32,8 @@ class HomeViewController: UIViewController {
             label_dashboard_yaxis_constraint.constant = 25
             label_logout_yaxis_constraint.constant = 25
             customNavBarConstraintHeight.constant = 107
-        }
+        }*/ //--commented on 19th April 21
+        
         /*if UIScreen.main.nativeBounds.height == 667 {
             label_dashboard_yaxis_constraint.constant = 0
             label_logout_yaxis_constraint.constant = 0

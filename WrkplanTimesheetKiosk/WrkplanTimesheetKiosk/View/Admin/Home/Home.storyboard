@@ -182,7 +182,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                                     </constraint>
                                     <constraint firstItem="eeO-R1-QWQ" firstAttribute="centerY" secondItem="cyd-aw-afU" secondAttribute="centerY" id="YFF-41-WJH">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                     <constraint firstAttribute="trailing" secondItem="OZv-2m-pbl" secondAttribute="trailing" constant="35" id="dfz-xG-Lun">
                                         <variation key="heightClass=regular-widthClass=compact" constant="20"/>
@@ -191,7 +191,7 @@
                                         <variation key="heightClass=regular-widthClass=compact" constant="70"/>
                                     </constraint>
                                     <constraint firstItem="OZv-2m-pbl" firstAttribute="centerY" secondItem="cyd-aw-afU" secondAttribute="centerY" id="xsO-aT-Pe1">
-                                        <variation key="heightClass=regular-widthClass=compact" constant="15"/>
+                                        <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                                     </constraint>
                                 </constraints>
                             </view>
@@ -202,7 +202,7 @@
                             <constraint firstItem="F4h-El-uGo" firstAttribute="top" secondItem="cyd-aw-afU" secondAttribute="bottom" constant="120" id="KU0-uX-F2g">
                                 <variation key="heightClass=regular-widthClass=compact" constant="94"/>
                             </constraint>
-                            <constraint firstItem="cyd-aw-afU" firstAttribute="top" secondItem="asv-so-kO4" secondAttribute="top" id="UPp-Wr-Zl3">
+                            <constraint firstItem="cyd-aw-afU" firstAttribute="top" secondItem="OPs-2z-ipj" secondAttribute="top" id="UPp-Wr-Zl3">
                                 <variation key="heightClass=regular-widthClass=compact" constant="0.0"/>
                             </constraint>
                             <constraint firstItem="cyd-aw-afU" firstAttribute="trailing" secondItem="OPs-2z-ipj" secondAttribute="trailing" id="WHf-Hp-CbZ"/>

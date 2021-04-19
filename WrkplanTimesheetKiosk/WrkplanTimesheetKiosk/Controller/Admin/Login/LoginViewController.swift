@@ -40,8 +40,10 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-       
-        if UIScreen.main.nativeBounds.height == 2688 ||
+    
+        ChangeStatusBarColor() //--added on 19th April
+        //---commented on 19th April 2021, starts
+     /*   if UIScreen.main.nativeBounds.height == 2688 ||
             UIScreen.main.nativeBounds.height == 2436 ||
             UIScreen.main.nativeBounds.height == 2208 ||
             UIScreen.main.nativeBounds.height == 1792 ||
@@ -49,7 +51,8 @@ class LoginViewController: UIViewController {
             label_yaxis_constraint.constant = 25
             home_yaxis_constraint.constant = 25
             navbar_height_constraint.constant = 107
-        }
+        }*/
+        //---commented on 19th April 2021, ends
         
 //        btnCheckBox.setImage(UIImage(named:"check_box_empty"), for: .normal)
 //        btnCheckBox.setImage(UIImage(named:"check_box"), for: .selected)
@@ -481,3 +484,34 @@ extension UIView {
 }
 
 //-------code for UIView shape(rounded corners), ends-------------
+//---code for change status bar color, starts------
+extension UIViewController{
+    func ChangeStatusBarColor(){
+        if #available(iOS 13.0, *) {
+            let app = UIApplication.shared
+//            let statusBarHeight: CGFloat = app.statusBarFrame.size.height
+            let window = UIApplication.shared.windows.filter {$0.isKeyWindow}.first
+            let statusBarHeight: CGFloat = window?.windowScene?.statusBarManager?.statusBarFrame.height ?? 0
+            
+            let statusbarView = UIView()
+            statusbarView.backgroundColor = UIColor(hexFromString: "3982cb")
+            view.addSubview(statusbarView)
+          
+            statusbarView.translatesAutoresizingMaskIntoConstraints = false
+            statusbarView.heightAnchor
+                .constraint(equalToConstant: statusBarHeight).isActive = true
+            statusbarView.widthAnchor
+                .constraint(equalTo: view.widthAnchor, multiplier: 1.0).isActive = true
+            statusbarView.topAnchor
+                .constraint(equalTo: view.topAnchor).isActive = true
+            statusbarView.centerXAnchor
+                .constraint(equalTo: view.centerXAnchor).isActive = true
+          
+        } else {
+            let statusBar = UIApplication.shared.value(forKeyPath: "statusBarWindow.statusBar") as? UIView
+//            statusBar?.backgroundColor = UIColor(hexFromString: "2E5771")
+            statusBar?.backgroundColor = UIColor(hexFromString: "3982cb")
+        }
+    }
+}
+//---code for change status bar color, ends------

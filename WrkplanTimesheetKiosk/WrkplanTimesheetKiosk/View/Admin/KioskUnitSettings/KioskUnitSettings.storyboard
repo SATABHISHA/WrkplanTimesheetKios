@@ -569,7 +569,7 @@
                             <constraint firstItem="4Aw-mr-gSQ" firstAttribute="leading" secondItem="ZiK-Ic-Z5F" secondAttribute="leading" constant="38" id="5YK-B3-he8">
                                 <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                             </constraint>
-                            <constraint firstItem="idw-AM-OtM" firstAttribute="top" secondItem="B7z-7o-FDW" secondAttribute="top" id="6Kb-Om-LrN"/>
+                            <constraint firstItem="idw-AM-OtM" firstAttribute="top" secondItem="ZiK-Ic-Z5F" secondAttribute="top" id="6Kb-Om-LrN"/>
                             <constraint firstItem="pjK-04-gyY" firstAttribute="top" secondItem="B0T-nx-uxF" secondAttribute="bottom" constant="20" id="9Dj-Ze-BJ4">
                                 <variation key="heightClass=regular-widthClass=compact" constant="10"/>
                             </constraint>

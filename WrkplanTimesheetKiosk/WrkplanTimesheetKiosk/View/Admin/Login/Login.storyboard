@@ -190,7 +190,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="9ma-us-5e3" firstAttribute="leading" secondItem="yaT-S0-WUh" secondAttribute="leading" id="Bwp-3d-oiW"/>
-                            <constraint firstItem="9ma-us-5e3" firstAttribute="top" secondItem="by1-O1-A7D" secondAttribute="top" id="igG-Os-RVr"/>
+                            <constraint firstItem="9ma-us-5e3" firstAttribute="top" secondItem="yaT-S0-WUh" secondAttribute="top" id="igG-Os-RVr"/>
                             <constraint firstItem="9ma-us-5e3" firstAttribute="trailing" secondItem="yaT-S0-WUh" secondAttribute="trailing" id="qMQ-rr-iRE"/>
                         </constraints>
                     </view>

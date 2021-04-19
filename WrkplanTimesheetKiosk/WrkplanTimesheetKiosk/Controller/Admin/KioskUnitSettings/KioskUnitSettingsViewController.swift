@@ -41,6 +41,8 @@ class KioskUnitSettingsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+//        ChangeStatusBarColor() //added on 19th April 21
+        
         let deviceId = UIDevice.current.identifierForVendor?.uuidString
         
         txt_device_id.text = deviceId

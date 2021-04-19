@@ -632,7 +632,8 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
                         //-------date formatter code starts------
                         let dateFormatterGet = DateFormatter()
                 //        dateFormatterGet.dateFormat = "MM/dd/yyyy hh:mm:ss a"
-                        dateFormatterGet.dateFormat = "dd/MM/yyyy" //--for test version
+//                        dateFormatterGet.dateFormat = "dd/MM/yyyy" //--for test version //commented on 19th April
+                        dateFormatterGet.dateFormat = "MM/dd/yyyy" //--changed on 19th April 21
                         
                         let dateFormatterPrint = DateFormatter()
                         dateFormatterPrint.dateFormat = "dd-MMM-yyyy"
