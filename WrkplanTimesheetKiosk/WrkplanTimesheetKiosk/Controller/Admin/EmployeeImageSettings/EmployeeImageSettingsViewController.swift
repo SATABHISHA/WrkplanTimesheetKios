@@ -176,33 +176,49 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
         
         let dict = filteredTableData[indexPath.row]
         cell.label_name.text = "\(dict["name_first"] as! String) \(dict["name_last"] as! String)"
+        cell.label_custom_btn.layer.masksToBounds = true
         if dict["aws_action"] as? String == "enroll"{
             cell.label_enroll_status.text = "No \n Image"
             cell.label_enroll_status.textColor = UIColor(hexFromString: "9A9A9A")
             
-            cell.view_custom_btn.borderWidth = 1
+//            cell.view_custom_btn.borderWidth = 1
             cell.view_custom_btn.cornerRadius = 5
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
+//            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Enroll \n Image"
-            cell.label_custom_btn.textColor = UIColor(hexFromString: "4f4f4f")
+//            cell.label_custom_btn.textColor = UIColor(hexFromString: "4f4f4f") //--commented on 18th may
+//            cell.label_custom_btn.borderWidth = 1
+            cell.label_custom_btn.layer.cornerRadius = 5
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "494949") //added on 18th may
+            cell.label_custom_btn.backgroundColor = UIColor(hexFromString: "D6D6D6")//added on 18th may
+            
         }else if dict["aws_action"] as? String == "delete"{
             cell.label_enroll_status.text = "Image \n Enrolled"
             cell.label_enroll_status.textColor = UIColor(hexFromString: "095CB0")
             
-            cell.view_custom_btn.borderWidth = 1
+//            cell.view_custom_btn.borderWidth = 1
             cell.view_custom_btn.cornerRadius = 5
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
+//            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Remove \n Image"
-            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
+//            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
+//            cell.label_custom_btn.borderWidth = 1
+            cell.label_custom_btn.layer.cornerRadius = 5
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "FFFFFF") //added on 18th may
+            cell.label_custom_btn.backgroundColor = UIColor(hexFromString: "FC362C")//added on 18th may
+            
         }else{
             cell.label_enroll_status.text = "Image \n Enrolled"
             cell.label_enroll_status.textColor = UIColor(hexFromString: "095CB0")
             
-            cell.view_custom_btn.borderWidth = 1
+//            cell.view_custom_btn.borderWidth = 1
             cell.view_custom_btn.cornerRadius = 5
-            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
+//            cell.view_custom_btn.borderColor = UIColor(hexFromString: "626262")
             cell.label_custom_btn.text = "Remove \n Image"
-            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
+//            cell.label_custom_btn.textColor = UIColor(hexFromString: "8E0A02")
+//            cell.label_custom_btn.borderWidth = 1
+            cell.label_custom_btn.layer.cornerRadius = 5
+            cell.label_custom_btn.textColor = UIColor(hexFromString: "FFFFFF") //added on 18th may
+            cell.label_custom_btn.backgroundColor = UIColor(hexFromString: "FC362C")//added on 18th may
+            
         }
         return cell
     }
