@@ -19,6 +19,7 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
     var ListFacesResult = false
     var IndexFacesResult = false
     var DeleteFacesResult = false
+    var CreateGalleryResult = false //--added on 21st may
     var mutableData = NSMutableData()
     var foundCharacters = ""
     
@@ -223,6 +224,51 @@ class EmployeeImageSettingsViewController: UIViewController, UITableViewDataSour
         return cell
     }
     //--------tableview code ends-------
+    
+    //==============Create Gallery popup code starts(added on 21st MAy)================
+    
+    @IBAction func btn_gallerycreate_popup_ok(_ sender: Any) {
+        closeGalleryPopup()
+        createGallery(stringCheck: "CreateGalleryResult")
+    }
+    @IBOutlet weak var stackViewGalleryPopup: UIStackView!
+    @IBOutlet var viewGalleryPopup: UIView!
+    func createGalleryPopup(){
+        blurEffect()
+        self.view.addSubview(viewGalleryPopup)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.height
+        viewGalleryPopup.transform = CGAffineTransform.init(scaleX: 1.3,y :1.3)
+        viewGalleryPopup.center = self.view.center
+        viewGalleryPopup.layer.cornerRadius = 10.0
+        //        addGoalChildFormView.layer.cornerRadius = 10.0
+        viewGalleryPopup.alpha = 0
+        viewGalleryPopup.sizeToFit()
+        
+        stackViewGalleryPopup.addBorder(side: .top, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+//        view_custom_btn_punchout.addBorder(side: .top, color: UIColor(hexFromString: "4f4f4f"), width: 1)
+//        btnPopupOk.addBorder(side: .right, color: UIColor(hexFromString: "7F7F7F"), width: 1)
+        
+        UIView.animate(withDuration: 0.3){
+            self.viewGalleryPopup.alpha = 1
+            self.viewGalleryPopup.transform = CGAffineTransform.identity
+        }
+        
+      
+    }
+    func closeGalleryPopup(){
+        UIView.animate(withDuration: 0.3, animations: {
+            self.viewGalleryPopup.transform = CGAffineTransform.init(scaleX: 1.3, y: 1.3)
+            self.viewGalleryPopup.alpha = 0
+            self.blurEffectView.alpha = 0.3
+        }) { (success) in
+            self.viewGalleryPopup.removeFromSuperview();
+            self.canelBlurEffect()
+        }
+    }
+    
+    //==============Create Gallery popup code ends(added on 21st MAy)================
+    
     
     //===============FormDetails Popup code starts(added on 4th jan)===================
     
@@ -445,12 +491,42 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
         self.strCheck = stringCheck
         //        self.activityIndicator.startAnimating()
         
-        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><ListFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId></ListFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!))
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><ListFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId></ListFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!)) //---temporary commented on 21st may
+        
+//        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><ListFaces xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId></ListFaces></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: 22)) //--for testing
         
         print("corpid-=>",UserSingletonModel.sharedInstance.CorpID!)
         
         var soapMessage = text
         let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=ListFaces")
+        let theRequest = NSMutableURLRequest(url: url! as URL)
+        let msgLength = String(soapMessage.count)
+        
+        theRequest.addValue("text/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        theRequest.addValue(msgLength, forHTTPHeaderField: "Content-Length")
+        theRequest.httpMethod = "POST"
+        theRequest.httpBody = soapMessage.data(using: String.Encoding.utf8, allowLossyConversion: false) // or false
+        
+        let connection = NSURLConnection(request: theRequest as URLRequest, delegate: self, startImmediately: true)
+        connection?.start()
+        if (connection != nil) {
+            let mutableData : Void = NSMutableData.initialize()
+            print(mutableData)
+        }
+    }
+    
+    func createGallery(stringCheck:String) {
+        self.strCheck = stringCheck
+        //        self.activityIndicator.startAnimating()
+        
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><CreateGallery xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId></CreateGallery></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!)) //---temporary commented on 21st may
+        
+//        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><CreateGallery xmlns='%@/KioskService.asmx'><CorpId>23</CorpId></CreateGallery></soap12:Body></soap12:Envelope>",BASE_URL) //--for testing
+        
+        print("corpid-=>",UserSingletonModel.sharedInstance.CorpID!)
+        
+        var soapMessage = text
+        let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=CreateGallery")
         let theRequest = NSMutableURLRequest(url: url! as URL)
         let msgLength = String(soapMessage.count)
         
@@ -550,6 +626,9 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
         if elementName == "DeleteFacesResult"{
             self.DeleteFacesResult = true
         }
+        if elementName == "CreateGalleryResult"{
+            self.CreateGalleryResult = true
+        }
     }
     
     // Operations to do for each element
@@ -581,7 +660,9 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                             self.tableviewEmployeeImageSettings.separatorStyle  = .none
                         }
                         }else{
-                            var style = ToastStyle()
+                            
+                            //commented on 21st may to open gallery popup
+                           /* var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
@@ -602,7 +683,8 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                                        dialogMessage.addAction(cancel)
 
                                        // Present alert message to user
-                                       self.present(dialogMessage, animated: true, completion: nil)
+                                       self.present(dialogMessage, animated: true, completion: nil) */
+                            createGalleryPopup()
                         }
                         //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
                     } catch let error
@@ -613,6 +695,60 @@ extension EmployeeImageSettingsViewController: XMLParserDelegate, NSURLConnectio
                 }
             }
         }
+        
+        if strCheck == "CreateGalleryResult"{
+            if CreateGalleryResult == true{
+                loaderEnd()
+                if let dataFromString = string.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                    do{
+                        let response = try JSON(data: dataFromString)
+                        let json = try JSON(data: dataFromString)
+                        print("Gallerydatatest->",json)
+                        print("Status->",json["Status"].stringValue)
+                        if json["Status"].stringValue == "true"{
+                            // Create Alert
+                                       var dialogMessage = UIAlertController(title: "", message: "Employee Image Gallery created successfully", preferredStyle: .alert)
+
+                            // Create Cancel button with action handlder
+                            let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) -> Void in
+                                self.loadData(stringCheck: "ListFace")
+                //                print("Cancel button tapped")
+                            }
+
+                                       //Add OK and Cancel button to an Alert object
+                                       dialogMessage.addAction(cancel)
+
+                                       // Present alert message to user
+                                       self.present(dialogMessage, animated: true, completion: nil)
+                        
+                        }else{
+                            // Create Alert
+                                       var dialogMessage = UIAlertController(title: "", message: "Sorry! Error creating Employee Image Gallery. Please contact admin.", preferredStyle: .alert)
+
+                            // Create Cancel button with action handlder
+                            let cancel = UIAlertAction(title: "OK", style: .cancel) { (action) -> Void in
+                //                print("Cancel button tapped")
+                            }
+
+                                       //Add OK and Cancel button to an Alert object
+                                       dialogMessage.addAction(cancel)
+
+                                       // Present alert message to user
+                                       self.present(dialogMessage, animated: true, completion: nil)
+                           
+                           
+                        }
+                        //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
+                    } catch let error
+                    {
+                        print(error)
+                    }
+                }
+            }
+        }
+    
+        
+        
         if strCheck == "IndexFacesResult"{
             if IndexFacesResult == true{
                 //                loaderEnd()
