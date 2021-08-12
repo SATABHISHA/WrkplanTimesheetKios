@@ -346,17 +346,23 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         let blurEffect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         loader = UIVisualEffectView(effect: blurEffect)
         loader.frame = view.bounds
+       /* let xPosition = view.frame.origin.x
+        let yPosition = view.frame.maxY - view.frame.size.height// Slide Up - 20px
+        let width = view.frame.size.width
+        let height = view.frame.size.height
+        loader.frame = CGRect(x: xPosition, y: yPosition, width: width, height: height)*/
         loader.alpha = 1
         view.addSubview(loader)
         var loadingIndicator: UIImageView!
         if UIScreen.main.bounds.size.width < 768 { //IPHONE
-            loadingIndicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 175, height: 88))
+            loadingIndicator = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 175/2, y: view.frame.maxY - 150, width: 175, height: 88))
         }else { //Ipad
-            loadingIndicator = UIImageView(frame: CGRect(x: 0, y: 0, width: 300, height: 150))
+            print("screensize-=>",UIScreen.main.bounds.width)
+            loadingIndicator = UIImageView(frame: CGRect(x: UIScreen.main.bounds.width/2 - 300/2, y: view.frame.maxY - 200, width: 300, height: 150))
         }
         let transform: CGAffineTransform = CGAffineTransform(scaleX: 2, y: 2)
         activityIndicator.transform = transform
-        loadingIndicator.center = self.view.center
+//        loadingIndicator.center = self.view.center //--commented on 12th aug
         /*loadingIndicator.hidesWhenStopped = true
         loadingIndicator.style = UIActivityIndicatorView.Style.white*/
 //        let jeremyGif = UIImage.gifImageWithName("Processing")

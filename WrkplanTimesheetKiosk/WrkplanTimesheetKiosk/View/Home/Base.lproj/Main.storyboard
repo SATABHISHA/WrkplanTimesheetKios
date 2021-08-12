@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="ipad10_5" orientation="portrait" layout="fullscreen" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -78,18 +78,22 @@
                     </connections>
                 </viewController>
                 <view contentMode="scaleToFill" id="xRD-ev-z06">
-                    <rect key="frame" x="0.0" y="0.0" width="331" height="190"/>
+                    <rect key="frame" x="0.0" y="0.0" width="313" height="205"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="437-4t-le0">
-                            <rect key="frame" x="0.0" y="132" width="331" height="58"/>
+                            <rect key="frame" x="0.0" y="147" width="313" height="58"/>
                             <subviews>
                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vmK-dA-7bK">
-                                    <rect key="frame" x="0.0" y="0.0" width="331" height="58"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="313" height="58"/>
                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                    <state key="normal" title="Ok">
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                    <state key="normal" title="OK">
                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     </state>
+                                    <variation key="heightClass=regular-widthClass=compact">
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                    </variation>
                                     <connections>
                                         <action selector="btnPopupOk:" destination="BYZ-38-t0r" eventType="touchUpInside" id="yp1-2Y-WDo"/>
                                     </connections>
@@ -101,8 +105,8 @@
                                 </constraint>
                             </constraints>
                         </stackView>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hmN-qO-IA3">
-                            <rect key="frame" x="47" y="59" width="237" height="20.5"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumScaleFactor="0.45000000000000001" translatesAutoresizingMaskIntoConstraints="NO" id="hmN-qO-IA3">
+                            <rect key="frame" x="15" y="59" width="283" height="20.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                             <color key="textColor" red="0.4802109772" green="0.4802109772" blue="0.4802109772" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -111,11 +115,11 @@
                             </variation>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oQ0-KV-tuF">
-                            <rect key="frame" x="0.0" y="0.0" width="331" height="34"/>
+                            <rect key="frame" x="0.0" y="0.0" width="313" height="34"/>
                             <subviews>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Login Alert!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mAf-A1-6vV">
-                                    <rect key="frame" x="15" y="5" width="301" height="24"/>
-                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                    <rect key="frame" x="15" y="5" width="283" height="24"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                     <nil key="highlightedColor"/>
                                     <variation key="heightClass=regular-widthClass=compact">
@@ -137,17 +141,17 @@
                     <viewLayoutGuide key="safeArea" id="E3x-th-NMM"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstItem="437-4t-le0" firstAttribute="top" relation="lessThanOrEqual" secondItem="hmN-qO-IA3" secondAttribute="bottom" constant="52.5" id="1PM-VU-ceJ"/>
+                        <constraint firstItem="437-4t-le0" firstAttribute="top" relation="greaterThanOrEqual" secondItem="hmN-qO-IA3" secondAttribute="bottom" constant="25" id="1PM-VU-ceJ"/>
                         <constraint firstAttribute="trailing" secondItem="oQ0-KV-tuF" secondAttribute="trailing" id="4h7-l7-hzc"/>
                         <constraint firstItem="437-4t-le0" firstAttribute="leading" secondItem="xRD-ev-z06" secondAttribute="leading" id="KMz-Jd-FtC"/>
                         <constraint firstItem="oQ0-KV-tuF" firstAttribute="top" secondItem="xRD-ev-z06" secondAttribute="top" id="OhV-V1-Fcd"/>
                         <constraint firstItem="E3x-th-NMM" firstAttribute="bottom" secondItem="437-4t-le0" secondAttribute="bottom" id="RaI-WI-2Cd"/>
                         <constraint firstItem="hmN-qO-IA3" firstAttribute="top" secondItem="oQ0-KV-tuF" secondAttribute="bottom" constant="25" id="iRX-4m-JhJ"/>
                         <constraint firstItem="E3x-th-NMM" firstAttribute="trailing" secondItem="437-4t-le0" secondAttribute="trailing" id="kmz-rd-phf"/>
-                        <constraint firstItem="hmN-qO-IA3" firstAttribute="leading" secondItem="E3x-th-NMM" secondAttribute="leading" constant="47" id="nPf-ag-UeM">
+                        <constraint firstItem="hmN-qO-IA3" firstAttribute="leading" secondItem="E3x-th-NMM" secondAttribute="leading" constant="15" id="nPf-ag-UeM">
                             <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
-                        <constraint firstItem="E3x-th-NMM" firstAttribute="trailing" secondItem="hmN-qO-IA3" secondAttribute="trailing" constant="47" id="srp-3m-tx2">
+                        <constraint firstItem="E3x-th-NMM" firstAttribute="trailing" secondItem="hmN-qO-IA3" secondAttribute="trailing" constant="15" id="srp-3m-tx2">
                             <variation key="heightClass=regular-widthClass=compact" constant="20"/>
                         </constraint>
                         <constraint firstItem="oQ0-KV-tuF" firstAttribute="leading" secondItem="xRD-ev-z06" secondAttribute="leading" id="yuj-A0-H5e"/>

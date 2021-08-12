@@ -524,6 +524,7 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
                 }
             }
         }
+        //----added on 12-Aug-2021, to get attendenceid, code starts----
         if strCheck == "SaveAttendance"{
             if self.SaveAttendanceResult == true{
                 //                loaderEnd()
@@ -566,6 +567,7 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
                 }
             }
         }
+        //----added on 12-Aug-2021, to get attendenceid, code ends----
     }
 };
 extension NSMutableAttributedString {
