@@ -26,11 +26,12 @@ struct EmployeeTimeSheetDetails{
     var CostTypeID:Int!
     var ContractID:Int!
     var tempDefault:Int!
+    var EmployeeAssignmentID:Int! //--added on 12-Aug-2021
 }
 
 class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, TaskSelectionTableViewCellDelegate {
     
-
+    
     @IBOutlet weak var label_total_hrs: UILabel!
     @IBOutlet weak var label_date: UILabel!
     @IBOutlet weak var tablevieTaskSelect: UITableView!
@@ -50,6 +51,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
     var collectUpdatedDetailsData = [Any]()
     
     var TaskHourSaveResult = false
+    var SaveAttendanceResult = false
     
     var ContractID: Int!
     var TaskId: Int!
@@ -60,7 +62,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         stackViewButtonBorder.addBorder(side: .top, color: UIColor(hexFromString: "4f4f4f"), width: 1.0)
         btn_cancel.addBorder(side: .right, color: UIColor(hexFromString: "4f4f4f"), width: 1.0)
         
@@ -81,7 +83,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
             tablevieTaskSelect.rowHeight = UITableView.automaticDimension
             tablevieTaskSelect.estimatedRowHeight = 150
         }
-       // tablevieTaskSelect.rowHeight = UITableView.automaticDimension
+        // tablevieTaskSelect.rowHeight = UITableView.automaticDimension
         //tablevieTaskSelect.estimatedRowHeight = 150
         
         loadData(stringCheck: "Task")
@@ -90,19 +92,31 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     @IBAction func btn_done(_ sender: Any) {
-      /*  print("ContractId-=>", self.ContractID!)
-        print("TaskId-=>", self.TaskId!)
-        print("LaborCatId-=>", self.LaborCatId!)
-        print("CostTypeId-=>", self.CostTypeId!)
-        print("SuffixCode-=>", self.SuffixCode!) */
+        /*  print("ContractId-=>", self.ContractID!)
+         print("TaskId-=>", self.TaskId!)
+         print("LaborCatId-=>", self.LaborCatId!)
+         print("CostTypeId-=>", self.CostTypeId!)
+         print("SuffixCode-=>", self.SuffixCode!) */
         
-//        self.performSegue(withIdentifier: "homemain", sender: nil)
-        Save(stringCheck: "Save", ContractID: self.ContractID!, TaskId: self.TaskId!, LaborCatId: self.LaborCatId!, CostTypeId: self.CostTypeId!, SuffixCode: self.SuffixCode!)
+        //        self.performSegue(withIdentifier: "homemain", sender: nil)
+        //        Save(stringCheck: "Save", ContractID: self.ContractID!, TaskId: self.TaskId!, LaborCatId: self.LaborCatId!, CostTypeId: self.CostTypeId!, SuffixCode: self.SuffixCode!) //--commented on 12-Aug-2021
+        
+        
+        //--added on 12-Aug-2021, code starts
+        if RecognitionOptionViewController.IsInOutButtonHit == false {
+            SaveAttendanceToGetAttendanceId(stringCheck: "SaveAttendance", saveInOut: "TC", InOutText: "TASK_CHANGED")
+        }else{
+            Save(stringCheck: "Save",
+                 EmployeeAssignmentId: RecognitionOptionViewController.EmployeeAssignmentID!)
+        }
+        //--added on 12-Aug-2021, code ends
     }
     
     @IBAction func btn_cancel(_ sender: Any) {
-//        self.performSegue(withIdentifier: "homemain", sender: nil)
-        Save(stringCheck: "Save", ContractID: self.ContractID!, TaskId: self.TaskId!, LaborCatId: self.LaborCatId!, CostTypeId: self.CostTypeId!, SuffixCode: self.SuffixCode!)
+        //        self.performSegue(withIdentifier: "homemain", sender: nil)
+        //        Save(stringCheck: "Save", ContractID: self.ContractID!, TaskId: self.TaskId!, LaborCatId: self.LaborCatId!, CostTypeId: self.CostTypeId!, SuffixCode: self.SuffixCode!)
+        Save(stringCheck: "Save",
+             EmployeeAssignmentId: RecognitionOptionViewController.EmployeeAssignmentID!)
     }
     
     
@@ -123,6 +137,8 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         self.LaborCatId = dict.LaborCategoryID!
         self.CostTypeId = dict.CostTypeID!
         self.SuffixCode = dict.ACSuffix!
+        RecognitionOptionViewController.EmployeeAssignmentID = dict.EmployeeAssignmentID! //--added on 21-Aug-2021
+        
         print("ContractId-=>", self.ContractID!)
         print("TaskId-=>", self.TaskId!)
         tablevieTaskSelect.reloadData()
@@ -139,26 +155,26 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         var dict = tableChildData[indexPath.row]
         
         /*cell.label_contract.text = dict["Contract"] as? String
-        cell.label_labour_category.text = dict["LaborCategory"] as? String
-        cell.label_hour.text = dict["Hour"] as? String
-        
-        if dict["DefaultTaskYn"] as? Int == 1{
-            cell.label_account_code.text = "\(String(describing: dict["AccountCode"] as? String)) (Default)"
-            cell.btn_radio.isSelected = true
-        }else if dict["DefaultTaskYn"] as? Int == 0{
-            cell.label_account_code.text = dict["AccountCode"] as? String
-            cell.btn_radio.isSelected = false
-        }*/
+         cell.label_labour_category.text = dict["LaborCategory"] as? String
+         cell.label_hour.text = dict["Hour"] as? String
+         
+         if dict["DefaultTaskYn"] as? Int == 1{
+         cell.label_account_code.text = "\(String(describing: dict["AccountCode"] as? String)) (Default)"
+         cell.btn_radio.isSelected = true
+         }else if dict["DefaultTaskYn"] as? Int == 0{
+         cell.label_account_code.text = dict["AccountCode"] as? String
+         cell.btn_radio.isSelected = false
+         }*/
         cell.label_contract.text = dict.Contract
         cell.label_labour_category.text = dict.LaborCategory
         cell.label_hour.text = dict.Hour
         
-       
+        
         if dict.DefaultTaskYn == 1{
             if dict.tempDefault == 1{
                 var attrs2: [NSAttributedString.Key : NSObject]!
                 if UIScreen.main.bounds.size.width < 768 { //IPHONE
-                 attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13), NSAttributedString.Key.foregroundColor : UIColor.red]
+                    attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13), NSAttributedString.Key.foregroundColor : UIColor.red]
                 }else { //Ipad
                     attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 22), NSAttributedString.Key.foregroundColor : UIColor.red]
                 }
@@ -166,7 +182,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
                 let attributedString2 = NSMutableAttributedString(string:" (Default)", attributes:attrs2)
                 attributedString1.append(attributedString2)
                 
-//            cell.label_account_code.text = "\(String(describing: dict.AccountCode!)) (Default)"
+                //            cell.label_account_code.text = "\(String(describing: dict.AccountCode!)) (Default)"
                 
                 cell.label_account_code.attributedText = attributedString1
             }else{
@@ -179,12 +195,13 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
             self.LaborCatId = dict.LaborCategoryID!
             self.CostTypeId = dict.CostTypeID!
             self.SuffixCode = dict.ACSuffix!
+            RecognitionOptionViewController.EmployeeAssignmentID = dict.EmployeeAssignmentID! //--added on 21-Aug-2021
             
         }else if dict.DefaultTaskYn == 0{
             if dict.tempDefault == 1{
                 var attrs2: [NSAttributedString.Key : NSObject]!
                 if UIScreen.main.bounds.size.width < 768 { //IPHONE
-                 attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13), NSAttributedString.Key.foregroundColor : UIColor.red]
+                    attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 13), NSAttributedString.Key.foregroundColor : UIColor.red]
                 }else { //Ipad
                     attrs2 = [NSAttributedString.Key.font : UIFont.boldSystemFont(ofSize: 22), NSAttributedString.Key.foregroundColor : UIColor.red]
                 }
@@ -192,19 +209,19 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
                 let attributedString2 = NSMutableAttributedString(string:" (Default)", attributes:attrs2)
                 attributedString1.append(attributedString2)
                 
-//                cell.label_account_code.text = "\(String(describing: dict.AccountCode!)) (Default)"
+                //                cell.label_account_code.text = "\(String(describing: dict.AccountCode!)) (Default)"
                 cell.label_account_code.attributedText = attributedString1
                 cell.btn_radio.isSelected = false
             }else{
-            cell.label_account_code.text = dict.AccountCode
-            cell.btn_radio.isSelected = false
+                cell.label_account_code.text = dict.AccountCode
+                cell.btn_radio.isSelected = false
             }
         }
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        let indexPath = tableView.indexPathForSelectedRow
+        //        let indexPath = tableView.indexPathForSelectedRow
         var dict = tableChildData[indexPath.row]
         for i in 0..<tableChildData.count{
             if i == indexPath.row{
@@ -218,6 +235,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
         self.LaborCatId = dict.LaborCategoryID!
         self.CostTypeId = dict.CostTypeID!
         self.SuffixCode = dict.ACSuffix!
+        RecognitionOptionViewController.EmployeeAssignmentID = dict.EmployeeAssignmentID! //--added on 21-Aug-2021
         print("ContractId-=>", self.ContractID!)
         print("TaskId-=>", self.TaskId!)
         tableView.reloadData()
@@ -225,7 +243,7 @@ class TaskSelectionViewController: UIViewController, UITableViewDelegate, UITabl
     }
     
     //-----tableview code ends
-
+    
     
     // ====================== Blur Effect Defiend START ================= \\
     var ActivityIndicator: UIActivityIndicatorView = UIActivityIndicatorView()
@@ -301,11 +319,14 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
             print(mutableData)
         }
     }
-    func Save(stringCheck: String, ContractID: Int, TaskId: Int, LaborCatId: Int, CostTypeId: Int, SuffixCode: String){
+    //    func Save(stringCheck: String, ContractID: Int, TaskId: Int, LaborCatId: Int, CostTypeId: Int, SuffixCode: String)
+    func Save(stringCheck: String, EmployeeAssignmentId: Int){
         self.strCheck = stringCheck
         //        self.activityIndicator.startAnimating()
         
-        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><ContractId>\(ContractID)</ContractId><TaskId>\(TaskId)</TaskId><LaborCatId>\(LaborCatId)</LaborCatId><CostTypeId>\(CostTypeId)</CostTypeId><SuffixCode>%@</SuffixCode></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: SuffixCode))
+        //        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><ContractId>\(ContractID)</ContractId><TaskId>\(TaskId)</TaskId><LaborCatId>\(LaborCatId)</LaborCatId><CostTypeId>\(CostTypeId)</CostTypeId><SuffixCode>%@</SuffixCode></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: SuffixCode)) //--commented on 12-Aug-2021
+        
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><EmployeeAssignmentId>\(EmployeeAssignmentId)</EmployeeAssignmentId><KioskAttendanceId>\(RecognitionOptionViewController.attendance_id!)</KioskAttendanceId></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN")) //--added on 12-Aug-2021
         
         var soapMessage = text
         let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=TaskHourSave")
@@ -324,7 +345,33 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
             print(mutableData)
         }
     }
-
+    
+    //----added on 12-Aug-2021, to get attendenceid, code starts----
+    func SaveAttendanceToGetAttendanceId(stringCheck: String, saveInOut: String, InOutText: String ) {
+        self.strCheck = stringCheck
+        //        self.activityIndicator.startAnimating()
+        
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><SaveAttendance xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><InOut>%@</InOut><InOutText>%@</InOutText></SaveAttendance></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: saveInOut), String(describing: InOutText))
+        
+        var soapMessage = text
+        let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=SaveAttendance")
+        let theRequest = NSMutableURLRequest(url: url! as URL)
+        let msgLength = String(soapMessage.count)
+        
+        theRequest.addValue("text/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
+        theRequest.addValue(msgLength, forHTTPHeaderField: "Content-Length")
+        theRequest.httpMethod = "POST"
+        theRequest.httpBody = soapMessage.data(using: String.Encoding.utf8, allowLossyConversion: false) // or false
+        
+        let connection = NSURLConnection(request: theRequest as URLRequest, delegate: self, startImmediately: true)
+        connection?.start()
+        if (connection != nil) {
+            let mutableData : Void = NSMutableData.initialize()
+            print(mutableData)
+        }
+    }
+    //----added on 12-Aug-2021, to get attendenceid, code ends----
+    
     // MARK: - Web Service
     
     internal func connection(_ connection: NSURLConnection, didReceive response: URLResponse) {
@@ -346,7 +393,7 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
     }
     // Operation to do when a new element is parsed
     func parser(_ parser: XMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName qName: String?, attributes attributeDict: [String : String]) {
-//        print(String(format : "didStartElement / elementName %@", elementName))
+        //        print(String(format : "didStartElement / elementName %@", elementName))
         /* if elementName == "SubordinateListTimeSheetStatusResult"{
          self.SubordinateListTimeSheetStatusResult = true
          }*/ //----will not work for get method
@@ -358,11 +405,16 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
             self.TaskHourSaveResult = true
         }
         
+        if elementName == "SaveAttendanceResult" {
+            self.SaveAttendanceResult = true
+            //            self.foundCharacters = ""
+        }
+        
     }
-
+    
     // Operations to do for each element
     func parser(_ parser: XMLParser, foundCharacters string: String) {
-//        print(String(format : "foundCharacters / value %@", string))
+        //        print(String(format : "foundCharacters / value %@", string))
         loaderStart()
         self.foundCharacters += string
         if strCheck == "Task"{
@@ -394,6 +446,7 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
                             data.AccountCode = value["AccountCode"].stringValue
                             data.CostTypeID = value["CostTypeID"].intValue
                             data.ContractID = value["ContractID"].intValue
+                            data.EmployeeAssignmentID = value["EmployeeAssignmentID"].intValue
                             if value["DefaultTaskYn"].intValue == 1{
                                 data.tempDefault = 1
                             }else{
@@ -430,60 +483,102 @@ extension TaskSelectionViewController: XMLParserDelegate, NSURLConnectionDelegat
             }
         }
         if strCheck == "Save"{
-                if self.TaskHourSaveResult == true{
-    //                loaderEnd()
-                    if let dataFromString = string.data(using: String.Encoding.utf8, allowLossyConversion: false) {
-                        do{
-                            let response = try JSON(data: dataFromString)
-                            let json = try JSON(data: dataFromString)
-                            print("DataSave->",json)
-                            if json["status"].stringValue == "true"{
-                                var style = ToastStyle()
-                                
-                                // this is just one of many style options
-                                style.messageColor = .white
-                                
-                                // present the toast with the new style
-                                self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
-                               
-                                
-                                loaderEnd()
-                                
-                                self.performSegue(withIdentifier: "homemain", sender: nil)
-                            }else{
-                                var style = ToastStyle()
-                                
-                                // this is just one of many style options
-                                style.messageColor = .white
-                                
-                                // present the toast with the new style
-                                self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
-                                
-                                loaderEnd()
-                            }
-                            //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
-                        } catch let error
-                        {
+            if self.TaskHourSaveResult == true{
+                //                loaderEnd()
+                if let dataFromString = string.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                    do{
+                        let response = try JSON(data: dataFromString)
+                        let json = try JSON(data: dataFromString)
+                        print("DataSave->",json)
+                        if json["status"].stringValue == "true"{
+                            var style = ToastStyle()
+                            
+                            // this is just one of many style options
+                            style.messageColor = .white
+                            
+                            // present the toast with the new style
+                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            
+                            
                             loaderEnd()
-                            print(error)
+                            
+                            self.performSegue(withIdentifier: "homemain", sender: nil)
+                        }else{
+                            var style = ToastStyle()
+                            
+                            // this is just one of many style options
+                            style.messageColor = .white
+                            
+                            // present the toast with the new style
+                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            
+                            loaderEnd()
                         }
-                        
+                        //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
+                    } catch let error
+                    {
+                        loaderEnd()
+                        print(error)
+                    }
+                    
+                }
+            }
+        }
+        if strCheck == "SaveAttendance"{
+            if self.SaveAttendanceResult == true{
+                //                loaderEnd()
+                if let dataFromString = string.data(using: String.Encoding.utf8, allowLossyConversion: false) {
+                    do{
+                        let response = try JSON(data: dataFromString)
+                        let json = try JSON(data: dataFromString)
+                        print("DataSave->",json)
+                        RecognitionOptionViewController.attendance_id = json["attendance_id"].intValue //--added on 12-Aug-2021
+                        if json["response"]["status"].stringValue == "true"{
+                            var style = ToastStyle()
+                            
+                            // this is just one of many style options
+                            style.messageColor = .white
+                            
+                            // present the toast with the new style
+                            self.view.makeToast(json["response"]["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            self.Save(stringCheck: "Save",
+                                      EmployeeAssignmentId: RecognitionOptionViewController.EmployeeAssignmentID!)
+                            
+                            loaderEnd()
+                        }else{
+                            var style = ToastStyle()
+                            
+                            // this is just one of many style options
+                            style.messageColor = .white
+                            
+                            // present the toast with the new style
+                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            
+                            loaderEnd()
+                        }
+                        //                        print("getJsonDataforLeaveBalanceArray=-=->",objectArray)
+                    } catch let error
+                    {
+                        loaderEnd()
+                        print(error)
+                    }
+                    
                 }
             }
         }
     }
 };
 extension NSMutableAttributedString {
-
+    
     func setColorForText(textForAttribute: String, withColor color: UIColor) {
         let range: NSRange = self.mutableString.range(of: textForAttribute, options: .caseInsensitive)
-
+        
         // Swift 4.2 and above
         self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
-
+        
         // Swift 4.1 and below
         self.addAttribute(NSAttributedString.Key.foregroundColor, value: color, range: range)
     }
-
+    
 }
 

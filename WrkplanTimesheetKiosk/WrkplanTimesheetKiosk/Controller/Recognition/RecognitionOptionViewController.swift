@@ -66,10 +66,19 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
     //---Declaring shared preferences----
     let sharedpreferences=UserDefaults.standard
     
+    static var attendance_id: Int?, EmployeeAssignmentID: Int?, IsInOutButtonHit: Bool! //added on 12-Aug-2021
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        
+        //--added on 12-Aug-2021, code starts--
+        RecognitionOptionViewController.attendance_id = 0
+        RecognitionOptionViewController.EmployeeAssignmentID = 0
+        RecognitionOptionViewController.IsInOutButtonHit = false
+        //--added on 12-Aug-2021, code ends--
+        
         if sharedpreferences.object(forKey: "AttendanceYN") as! Int == 0 {
             stackview_height.constant = 0
             
@@ -145,6 +154,7 @@ class RecognitionOptionViewController: UIViewController, UITableViewDataSource, 
     //---Checkin onclick
     @objc func ChecknView(tapGestureRecognizer: UITapGestureRecognizer){
         if next_action == "IN"{
+            RecognitionOptionViewController.IsInOutButtonHit = true
             loaderStart()
             saveAttendance(stringCheck: "SaveAttendance", saveInOut: "IN", InOutText: "PUNCHED_IN")
             RecognitionOptionViewController.checkedInOut = "You are Punched IN"
@@ -492,7 +502,9 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
         self.strCheck = stringCheck
         //        self.activityIndicator.startAnimating()
         
-        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><ContractId>0</ContractId><TaskId>0</TaskId><LaborCatId>0</LaborCatId><CostTypeId>0</CostTypeId><SuffixCode>%@</SuffixCode></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: ""))
+//        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><ContractId>0</ContractId><TaskId>0</TaskId><LaborCatId>0</LaborCatId><CostTypeId>0</CostTypeId><SuffixCode>%@</SuffixCode></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN"), String(describing: ""))  //--commented on 12-Aug-2021
+        
+        let text = String(format: "<?xml version='1.0' encoding='utf-8'?><soap12:Envelope xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' xmlns:soap12='http://www.w3.org/2003/05/soap-envelope'><soap12:Body><TaskHourSave xmlns='%@/KioskService.asmx'><CorpId>%@</CorpId><UserId>\(RealtimeDetectionViewController.PersonId!)</UserId><UserType>%@</UserType><EmployeeAssignmentId>\(RecognitionOptionViewController.EmployeeAssignmentID!)</EmployeeAssignmentId><KioskAttendanceId>\(RecognitionOptionViewController.attendance_id!)</KioskAttendanceId></TaskHourSave></soap12:Body></soap12:Envelope>",BASE_URL, String(describing: UserSingletonModel.sharedInstance.CorpID!), String(describing: "MAIN")) //--added on 12-Aug-2021
         
         var soapMessage = text
         let url = NSURL(string: "\(BASE_URL)/kioskservice.asmx?op=TaskHourSave")
@@ -678,14 +690,15 @@ extension RecognitionOptionViewController: XMLParserDelegate, NSURLConnectionDel
                         let response = try JSON(data: dataFromString)
                         let json = try JSON(data: dataFromString)
                         print("DataSave->",json)
-                        if json["status"].stringValue == "true"{
+                        RecognitionOptionViewController.attendance_id = json["attendance_id"].intValue //--added on 12-Aug-2021
+                        if json["response"]["status"].stringValue == "true"{
                             var style = ToastStyle()
                             
                             // this is just one of many style options
                             style.messageColor = .white
                             
                             // present the toast with the new style
-                            self.view.makeToast(json["message"].stringValue, duration: 3.0, position: .bottom, style: style)
+                            self.view.makeToast(json["response"]["message"].stringValue, duration: 3.0, position: .bottom, style: style)
                             if self.next_action == "IN"{
                                 self.performSegue(withIdentifier: "attendancerecord", sender: nil)
                             }else{
