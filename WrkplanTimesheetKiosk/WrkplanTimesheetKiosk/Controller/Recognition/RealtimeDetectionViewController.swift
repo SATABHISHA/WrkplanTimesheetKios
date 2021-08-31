@@ -57,9 +57,9 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         //-----code to show the Avrrunning session in a view, ends
         
         
-        drawLine()
+        drawLine() //--added on 31Aug,2021
 //        executeRepeatedly()
-        moveVertically()
+        moveVertically() //--added on 31Aug,2021
         
     }
     //---added on 31Aug,2021, code starts----
@@ -67,7 +67,8 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         self.view.addSubview(scanLine)
         let screenSize: CGRect = UIScreen.main.bounds
         
-            scanLine.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 0.4, alpha: 1.0) // green color
+        scanLine.backgroundColor = UIColor(red: 0, green: 89.8, blue: 85.1, alpha: 1.0) // green color
+        
         scanlineRect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 2)
             scanlineStartY = topBottomMargin
 //        scanlineStopY = self.view.frame.size.height - topBottomMargin
@@ -77,13 +78,13 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         }
 
     var flagLastYLimit: Bool = false
+    var timer: Timer?
     func moveVertically() {
             scanLine.frame  = scanlineRect
             scanLine.center = CGPoint(x: scanLine.center.x, y: scanlineStartY)
             scanLine.isHidden = false
             weak var weakSelf = scanLine
-        
-        let timer = Timer.scheduledTimer(withTimeInterval: 0.006, repeats: true){ _ in
+         timer = Timer.scheduledTimer(withTimeInterval: 0.006, repeats: true){ _ in
 //            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse, .beginFromCurrentState], animations: {() -> Void in
 ////                weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: self.scanlineStopY)
 //                weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: self.postionYaxis)
@@ -107,7 +108,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
             
            
         }
-        timer.fire()
+        timer!.fire()
         }
     //---added on 31Aug,2021, code ends----
     
@@ -324,6 +325,7 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
         closeDetailsPopup()
 //        self.performSegue(withIdentifier: "dashboard", sender: nil)
         DispatchQueue.main.async {
+            self.scanLine.isHidden = false //added on 31st Aug, 2021
             self.captureSession.startRunning()
         }
     }
@@ -540,7 +542,7 @@ extension RealtimeDetectionViewController: XMLParserDelegate, NSURLConnectionDel
         print(String(format : "foundCharacters / value %@", string))
         if strCheck == "Recognize"{
             if self.RecognizeFaceResult == true {
-                
+                scanLine.isHidden = true //added on 31st Aug, 2021
 //                eventData.removeAll()
                 //                self.removeAllArrayValue()
                 
