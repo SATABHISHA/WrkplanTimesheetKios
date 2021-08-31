@@ -32,6 +32,14 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
    static var Supervisor1: String!
    static var Supervisor2: String!
     
+    //---added on 31Aug,2021, code starts----
+    var scanlineRect = CGRect.zero
+    var scanlineStartY: CGFloat = 0
+    var scanlineStopY: CGFloat = 0
+    var topBottomMargin: CGFloat = 0
+    var scanLine: UIView = UIView()
+    var postionYaxis: CGFloat = 0
+    //---added on 31Aug,2021, code ends----
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,9 +55,62 @@ class RealtimeDetectionViewController: UIViewController, AVCaptureVideoDataOutpu
             self.previewLayer.frame = self.viewCamera!.bounds
         }
         //-----code to show the Avrrunning session in a view, ends
+        
+        
+        drawLine()
+//        executeRepeatedly()
+        moveVertically()
+        
     }
-    
+    //---added on 31Aug,2021, code starts----
+    func drawLine() {
+        self.view.addSubview(scanLine)
+        let screenSize: CGRect = UIScreen.main.bounds
+        
+            scanLine.backgroundColor = UIColor(red: 0.4, green: 0.8, blue: 0.4, alpha: 1.0) // green color
+        scanlineRect = CGRect(x: 0, y: 0, width: self.view.frame.width, height: 2)
+            scanlineStartY = topBottomMargin
+//        scanlineStopY = self.view.frame.size.height - topBottomMargin
+//        scanlineStopY = self.view.frame.size.height
+        scanlineStopY = screenSize.height
+        print("height-=>",scanlineStopY)
+        }
 
+    var flagLastYLimit: Bool = false
+    func moveVertically() {
+            scanLine.frame  = scanlineRect
+            scanLine.center = CGPoint(x: scanLine.center.x, y: scanlineStartY)
+            scanLine.isHidden = false
+            weak var weakSelf = scanLine
+        
+        let timer = Timer.scheduledTimer(withTimeInterval: 0.006, repeats: true){ _ in
+//            UIView.animate(withDuration: 1.0, delay: 0.0, options: [.repeat, .autoreverse, .beginFromCurrentState], animations: {() -> Void in
+////                weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: self.scanlineStopY)
+//                weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: self.postionYaxis)
+//                }, completion: nil)
+            
+            weakSelf!.center = CGPoint(x: weakSelf!.center.x, y: self.postionYaxis)
+//            self.postionYaxis = self.postionYaxis + 1
+            if (self.postionYaxis <= self.scanlineStopY && self.flagLastYLimit == false) {
+                self.postionYaxis = self.postionYaxis + 1
+                self.flagLastYLimit = false
+                if self.postionYaxis == self.scanlineStopY {
+                    self.flagLastYLimit = true
+                }
+            } else if (self.postionYaxis <= self.scanlineStopY && self.flagLastYLimit == true){
+                self.postionYaxis = self.postionYaxis - 1
+                self.flagLastYLimit = true
+                if self.postionYaxis == 0 {
+                    self.flagLastYLimit = false
+                }
+            }
+            
+           
+        }
+        timer.fire()
+        }
+    //---added on 31Aug,2021, code ends----
+    
     func captureOutput(
         _ output: AVCaptureOutput,
         didOutput sampleBuffer: CMSampleBuffer,
